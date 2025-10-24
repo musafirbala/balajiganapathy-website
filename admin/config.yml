@@ -1,51 +1,169 @@
 backend:
   name: git-gateway
   branch: main
-  local_backend: true
+  repo: YOUR_USERNAME/balajiganapathy-website
+  auth_endpoint: /api/auth
+  cms_label_prefix: cms/
 
-media_folder: "media"
-public_folder: "/media"
+media_folder: media
+public_folder: /media
+site_url: https://balajiganapathy.com
 
+# ===== PUBLISH MODE =====
+publish_mode: editorial_workflow
+show_preview_links: true
+
+# ===== COLLECTIONS =====
 collections:
-  - name: "site"
-    label: "Site Settings"
+  # COLLECTION 1: SITE SETTINGS (Single File)
+  - name: site
+    label: Site Settings
+    description: Global site configuration and metadata
     files:
-      - name: "config"
-        label: "Site Configuration"
-        file: "_data/config.json"
+      - name: config
+        label: Site Configuration
+        file: _data/config.json
+        description: Global site settings
         fields:
-          - { label: "Site Title", name: "title", widget: "string", default: "Balaji Ganapathy" }
-          - { label: "Hero Video URL", name: "heroVideo", widget: "string", default: "portfolio-montage.mp4" }
+          - { label: "Site Title", name: "title", widget: "string", default: "Balaji Ganapathy", pattern: [".{1,}", "Title must be at least 1 character"] }
+          - { label: "Tagline", name: "tagline", widget: "string", default: "Global Social Impact Executive" }
+          - { label: "Email", name: "email", widget: "string", required: true }
+          - { label: "Phone", name: "phone", widget: "string", required: false }
+          - { label: "LinkedIn URL", name: "linkedin", widget: "string", required: false }
+          - { label: "Site Description", name: "description", widget: "text", default: "25+ years leading global social impact initiatives" }
 
-  - name: "leader"
-    label: "Leader Page"
-    file: "_data/leader.json"
-    fields:
-      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Empowering Purpose. Enabling Impact. Transforming Leadership." }
-      - { label: "Hero Subtitle", name: "subtitle", widget: "string", default: "25+ Years Transforming Global Impact" }
-      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#00D8BE" }
-      - { label: "Metric 1 Value", name: "metric1", widget: "string", default: "15.99M" }
-      - { label: "Metric 1 Label", name: "metric1Label", widget: "string", default: "Lives Impacted" }
-      - { label: "Metric 2 Value", name: "metric2", widget: "string", default: "50+" }
-      - { label: "Metric 2 Label", name: "metric2Label", widget: "string", default: "Countries" }
+  # COLLECTION 2: LEADER PERSONA (Single File)
+  - name: leader
+    label: Leader Page
+    description: Leader persona content and settings
+    files:
+      - name: leader
+        label: Leader Content
+        file: _data/leader.json
+        description: Complete leader persona data
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Leader" }
+          - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Empowering Purpose. Enabling Impact. Transforming Leadership." }
+          - { label: "Hero Subtitle", name: "subtitle", widget: "string", default: "25+ Years Transforming Global Impact" }
+          - { label: "Accent Color", name: "colorAccent", widget: "color", default: "#00D8BE", allowInput: true }
+          - label: "Featured Programs"
+            name: "programs"
+            widget: "list"
+            fields:
+              - { label: "Program Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Icon Emoji", name: "icon", widget: "string", default: "⭐" }
+          - label: "Speaking Topics"
+            name: "speakingTopics"
+            widget: "list"
+            fields:
+              - { label: "Topic Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Details", name: "details", widget: "text", required: false }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string", default: "Book Strategic Advisory Call" }
+          - { label: "CTA Button Color", name: "ctaColor", widget: "color", default: "#00D8BE", allowInput: true }
 
-  - name: "speaker"
-    label: "Speaker Page"
-    file: "_data/speaker.json"
-    fields:
-      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Keynotes on Leadership, Impact & Transformation" }
-      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#FFB400" }
+  # COLLECTION 3: SPEAKER PERSONA (Single File)
+  - name: speaker
+    label: Speaker Page
+    description: Speaker persona content and speaking engagements
+    files:
+      - name: speaker
+        label: Speaker Content
+        file: _data/speaker.json
+        description: Complete speaker persona data
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Speaker" }
+          - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Keynotes on Leadership, Impact & Transformation" }
+          - { label: "Accent Color", name: "colorAccent", widget: "color", default: "#FFB400", allowInput: true }
+          - label: "Speaking Topics"
+            name: "topics"
+            widget: "list"
+            fields:
+              - { label: "Topic Title", name: "title", widget: "string" }
+              - { label: "Short Description", name: "description", widget: "text" }
+              - { label: "Detailed Information", name: "details", widget: "text" }
+          - label: "Featured Engagements"
+            name: "engagements"
+            widget: "list"
+            fields:
+              - { label: "Event Title", name: "title", widget: "string" }
+              - { label: "Event Date", name: "date", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Event Type", name: "type", widget: "string", default: "Conference" }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string", default: "Book for Your Conference" }
+          - { label: "CTA Button Color", name: "ctaColor", widget: "color", default: "#FFB400", allowInput: true }
 
-  - name: "advisor"
-    label: "Advisor Page"
-    file: "_data/advisor.json"
-    fields:
-      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Strategic Advisory for ESG & Social Impact" }
-      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#00D8BE" }
+  # COLLECTION 4: ADVISOR PERSONA (Single File)
+  - name: advisor
+    label: Advisor Page
+    description: Advisor persona content, expertise areas, and case studies
+    files:
+      - name: advisor
+        label: Advisor Content
+        file: _data/advisor.json
+        description: Complete advisor persona data
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Advisor" }
+          - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Strategic Advisory for ESG & Social Impact" }
+          - { label: "Accent Color", name: "colorAccent", widget: "color", default: "#00D8BE", allowInput: true }
+          - label: "Expertise Areas"
+            name: "expertise"
+            widget: "list"
+            fields:
+              - { label: "Expertise Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Client Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Quote", name: "quote", widget: "text" }
+              - { label: "Author Name", name: "author", widget: "string" }
+              - { label: "Author Role", name: "role", widget: "string" }
+          - label: "Case Studies"
+            name: "caseStudies"
+            widget: "list"
+            fields:
+              - { label: "Case Study Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Outcome", name: "outcome", widget: "text", required: false }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string", default: "Request Consulting Engagement" }
+          - { label: "CTA Button Color", name: "ctaColor", widget: "color", default: "#00D8BE", allowInput: true }
 
-  - name: "coach"
-    label: "Coach Page"
-    file: "_data/coach.json"
-    fields:
-      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Transforming Leaders, Teams & Organizations" }
-      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#FF6B6B" }
+  # COLLECTION 5: COACH PERSONA (Single File)
+  - name: coach
+    label: Coach Page
+    description: Coach persona content, packages, and transformation stories
+    files:
+      - name: coach
+        label: Coach Content
+        file: _data/coach.json
+        description: Complete coach persona data
+        fields:
+          - { label: "Page Title", name: "title", widget: "string", default: "Coach" }
+          - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Transforming Leaders, Teams & Organizations" }
+          - { label: "Accent Color", name: "colorAccent", widget: "color", default: "#FFD700", allowInput: true }
+          - label: "Coaching Focus Areas"
+            name: "focusAreas"
+            widget: "list"
+            fields:
+              - { label: "Focus Area Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Transformation Stories"
+            name: "transformationStories"
+            widget: "list"
+            fields:
+              - { label: "Story Title", name: "title", widget: "string" }
+              - { label: "Story Description", name: "description", widget: "text" }
+              - { label: "Outcome", name: "outcome", widget: "text", required: false }
+          - label: "Coaching Packages"
+            name: "packages"
+            widget: "list"
+            fields:
+              - { label: "Package Name", name: "name", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string", example: "3 months" }
+              - { label: "Number of Sessions", name: "sessions", widget: "string", example: "12 sessions" }
+              - { label: "Price", name: "price", widget: "string", example: "$5,000" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "CTA Button Text", name: "ctaText", widget: "string", default: "Schedule Free 30-min Intro" }
+          - { label: "CTA Button Color", name: "ctaColor", widget: "color", default: "#FFD700", allowInput: true }
