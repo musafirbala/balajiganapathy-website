@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Balaji Ganapathy - 25+ years global social impact leader | CSR, ESG, Philanthropy, Executive Coach">
-    <meta name="keywords" content="social impact, CSR, ESG, leadership, executive coach, sustainability">
+    <meta name="keywords" content="social impact, CSR, ESG, leadership, executive coach, sustainability, corporate social responsibility">
     <meta name="author" content="Balaji Ganapathy">
+    <meta name="robots" content="index, follow">
     <meta property="og:title" content="Balaji Ganapathy - Global Social Impact Executive">
     <meta property="og:type" content="profile">
     <meta property="og:image" content="/media/og-image.jpg">
     <meta property="og:url" content="https://balajiganapathy.com">
-    <title>Balaji Ganapathy | Global Social Impact Executive</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Balaji Ganapathy - Global Social Impact Executive">
+    <title>Balaji Ganapathy | Global Social Impact Executive | CSR Leadership</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <style>
         * {
@@ -42,6 +47,7 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
@@ -51,6 +57,9 @@
             line-height: 1.6;
             transition: background 0.3s ease, color 0.3s ease;
             overflow-x: hidden;
+            word-wrap: break-word;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body.dark-mode {
@@ -58,7 +67,33 @@
             color: var(--color-text-light);
         }
 
-        /* HEADER & NAVIGATION */
+        /* ====== ACCESSIBILITY ====== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-teal);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-decoration: none;
+            z-index: 100;
+            border-radius: 0 0 4px 0;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* ====== HEADER & NAVIGATION ====== */
         header {
             position: sticky;
             top: 0;
@@ -68,11 +103,13 @@
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
             padding: var(--spacing-md) var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         body.dark-mode header {
             background: rgba(10, 14, 39, 0.95);
             border-bottom-color: var(--color-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .header-container {
@@ -81,6 +118,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: var(--spacing-lg);
         }
 
         .logo {
@@ -90,12 +128,20 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         nav {
             display: flex;
             gap: var(--spacing-lg);
             align-items: center;
+            flex: 1;
         }
 
         .nav-link {
@@ -108,6 +154,7 @@
             padding: var(--spacing-xs) var(--spacing-sm);
             border-radius: 4px;
             position: relative;
+            white-space: nowrap;
         }
 
         body.dark-mode .nav-link {
@@ -126,13 +173,26 @@
             transform: translateX(-50%);
         }
 
-        .nav-link:hover::after {
+        .nav-link:hover::after,
+        .nav-link:focus::after {
             width: 100%;
         }
 
         .nav-link.active {
             color: var(--current-accent, var(--color-teal));
             font-weight: 600;
+        }
+
+        .nav-link:focus {
+            outline: 2px solid var(--current-accent, var(--color-teal));
+            outline-offset: 2px;
+        }
+
+        /* ====== THEME TOGGLE ====== */
+        .theme-controls {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
         }
 
         .theme-toggle {
@@ -142,17 +202,28 @@
             font-size: 1.5rem;
             transition: transform 0.3s ease;
             padding: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .theme-toggle:hover {
             transform: rotate(20deg);
         }
 
+        .theme-toggle:focus {
+            outline: 2px solid var(--color-teal);
+            outline-offset: 2px;
+            border-radius: 50%;
+        }
+
+        /* ====== HAMBURGER MENU ====== */
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
             gap: 0.4rem;
+            padding: var(--spacing-xs);
         }
 
         .hamburger span {
@@ -179,7 +250,13 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* PERSONAS SECTION */
+        .hamburger:focus {
+            outline: 2px solid var(--color-teal);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* ====== MAIN CONTENT ====== */
         main {
             position: relative;
             width: 100%;
@@ -202,7 +279,7 @@
             transition: opacity 0.4s ease;
         }
 
-        /* HERO SECTION */
+        /* ====== HERO SECTION ====== */
         .hero {
             position: relative;
             height: 60vh;
@@ -211,6 +288,7 @@
             justify-content: center;
             background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1));
             overflow: hidden;
+            min-height: 400px;
         }
 
         .hero::before {
@@ -239,6 +317,7 @@
             margin-bottom: var(--spacing-md);
             line-height: 1.2;
             animation: fadeInUp 0.8s ease-out;
+            letter-spacing: -1px;
         }
 
         .hero p {
@@ -247,6 +326,7 @@
             opacity: 0.8;
             animation: fadeInUp 0.8s ease-out 0.1s backwards;
             margin-bottom: var(--spacing-md);
+            line-height: 1.5;
         }
 
         body.dark-mode .hero p {
@@ -264,7 +344,7 @@
             }
         }
 
-        /* METRICS SECTION */
+        /* ====== METRICS SECTION ====== */
         .metrics {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -275,6 +355,8 @@
             margin: -3rem auto 0;
             position: relative;
             z-index: 20;
+            border-radius: 12px;
+            width: 90%;
         }
 
         body.dark-mode .metrics {
@@ -288,6 +370,10 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 216, 190, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         body.dark-mode .metric-card {
@@ -306,6 +392,7 @@
             color: var(--current-accent, var(--color-teal));
             margin-bottom: var(--spacing-sm);
             font-variant-numeric: tabular-nums;
+            transition: all 0.3s ease;
         }
 
         .metric-label {
@@ -320,7 +407,7 @@
             color: #aaa;
         }
 
-        /* CAROUSEL */
+        /* ====== CAROUSEL SECTION ====== */
         .carousel {
             padding: var(--spacing-xl) var(--spacing-lg);
             max-width: 1400px;
@@ -332,6 +419,11 @@
             font-size: 2rem;
             margin-bottom: var(--spacing-lg);
             font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        body.dark-mode .carousel h2 {
+            color: var(--color-text-light);
         }
 
         .carousel-container {
@@ -342,6 +434,7 @@
             scroll-snap-type: x mandatory;
             padding-bottom: var(--spacing-md);
             scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
         }
 
         .carousel-item {
@@ -355,11 +448,13 @@
             min-height: 300px;
             display: flex;
             flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         body.dark-mode .carousel-item {
             background: var(--color-card-dark);
             border-color: var(--color-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .carousel-item:hover {
@@ -371,23 +466,30 @@
             box-shadow: 0 15px 40px rgba(0, 216, 190, 0.1);
         }
 
+        .carousel-item:focus {
+            outline: 2px solid var(--color-teal);
+            outline-offset: 2px;
+        }
+
         .carousel-item h3 {
             font-size: 1.25rem;
             margin-bottom: var(--spacing-sm);
             font-weight: 600;
+            line-height: 1.3;
         }
 
         .carousel-item p {
             font-size: 0.95rem;
             color: #666;
             flex-grow: 1;
+            line-height: 1.6;
         }
 
         body.dark-mode .carousel-item p {
             color: #aaa;
         }
 
-        /* ACCORDION */
+        /* ====== ACCORDION SECTION ====== */
         .accordion {
             padding: var(--spacing-xl) var(--spacing-lg);
             max-width: 1400px;
@@ -399,6 +501,11 @@
             font-size: 2rem;
             margin-bottom: var(--spacing-lg);
             font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        body.dark-mode .accordion h2 {
+            color: var(--color-text-light);
         }
 
         .accordion-item {
@@ -408,11 +515,13 @@
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         body.dark-mode .accordion-item {
             background: var(--color-card-dark);
             border-color: var(--color-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .accordion-header {
@@ -424,6 +533,11 @@
             font-weight: 600;
             user-select: none;
             transition: all 0.3s ease;
+            background: white;
+        }
+
+        body.dark-mode .accordion-header {
+            background: var(--color-card-dark);
         }
 
         .accordion-header:hover {
@@ -435,9 +549,16 @@
             background: rgba(0, 216, 190, 0.1);
         }
 
+        .accordion-header:focus {
+            outline: 2px solid var(--color-teal);
+            outline-offset: -2px;
+        }
+
         .accordion-icon {
             font-size: 1.5rem;
             transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: var(--spacing-md);
         }
 
         .accordion-item.active .accordion-icon {
@@ -456,23 +577,25 @@
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 500px;
+            max-height: 1000px;
         }
 
         .accordion-body {
             padding: var(--spacing-lg);
             color: #666;
+            line-height: 1.7;
         }
 
         body.dark-mode .accordion-body {
             color: #aaa;
         }
 
-        /* CTA BUTTON */
+        /* ====== CTA SECTION ====== */
         .cta-section {
             padding: var(--spacing-xl) var(--spacing-lg);
             text-align: center;
             background: linear-gradient(135deg, rgba(0, 216, 190, 0.08), transparent);
+            margin: var(--spacing-xl) 0;
         }
 
         body.dark-mode .cta-section {
@@ -515,7 +638,12 @@
             transform: translateY(0);
         }
 
-        /* MODAL */
+        .cta-button:focus {
+            outline: 2px solid rgba(0, 216, 190, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* ====== MODAL ====== */
         .modal {
             display: none;
             position: fixed;
@@ -526,6 +654,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             animation: fadeIn 0.3s ease;
+            overflow-y: auto;
         }
 
         @keyframes fadeIn {
@@ -548,6 +677,7 @@
             position: relative;
             animation: slideUp 0.4s ease;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            margin: auto;
         }
 
         body.dark-mode .modal-content {
@@ -575,6 +705,10 @@
             cursor: pointer;
             color: #999;
             transition: color 0.3s ease;
+            padding: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .modal-close:hover {
@@ -585,13 +719,24 @@
             color: var(--color-text-light);
         }
 
+        .modal-close:focus {
+            outline: 2px solid var(--color-teal);
+            outline-offset: 2px;
+        }
+
         .modal-title {
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: var(--spacing-md);
             margin-top: var(--spacing-md);
+            color: var(--color-text-dark);
         }
 
+        body.dark-mode .modal-title {
+            color: var(--color-text-light);
+        }
+
+        /* ====== FORM STYLING ====== */
         .form-group {
             margin-bottom: var(--spacing-md);
         }
@@ -601,6 +746,11 @@
             margin-bottom: var(--spacing-xs);
             font-weight: 500;
             font-size: 0.95rem;
+            color: var(--color-text-dark);
+        }
+
+        body.dark-mode .form-group label {
+            color: var(--color-text-light);
         }
 
         .form-group input,
@@ -612,6 +762,8 @@
             font-family: inherit;
             font-size: 0.95rem;
             transition: all 0.3s ease;
+            background: white;
+            color: var(--color-text-dark);
         }
 
         body.dark-mode .form-group input,
@@ -628,6 +780,11 @@
             box-shadow: 0 0 0 3px rgba(0, 216, 190, 0.1);
         }
 
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
         .modal-submit {
             width: 100%;
             padding: var(--spacing-md);
@@ -639,13 +796,20 @@
             cursor: pointer;
             font-size: 1rem;
             transition: all 0.3s ease;
+            margin-top: var(--spacing-md);
         }
 
         .modal-submit:hover {
             filter: brightness(1.1);
+            transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        .modal-submit:focus {
+            outline: 2px solid rgba(0, 216, 190, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* ====== FOOTER ====== */
         footer {
             background: var(--color-text-dark);
             color: white;
@@ -655,6 +819,7 @@
 
         body.dark-mode footer {
             background: rgba(0, 0, 0, 0.3);
+            border-top: 1px solid var(--color-border);
         }
 
         .footer-container {
@@ -684,14 +849,20 @@
             color: var(--color-teal);
         }
 
+        .footer-section a:focus {
+            outline: 2px solid var(--color-teal);
+            outline-offset: 2px;
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: var(--spacing-lg);
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
-        /* NAVIGATION ARROWS */
+        /* ====== NAVIGATION ARROWS ====== */
         .persona-nav {
             position: fixed;
             left: 0;
@@ -720,6 +891,7 @@
             transition: all 0.3s ease;
             pointer-events: auto;
             opacity: 0.7;
+            box-shadow: 0 4px 12px rgba(0, 216, 190, 0.2);
         }
 
         .nav-arrow:hover {
@@ -728,6 +900,12 @@
             box-shadow: 0 8px 20px rgba(0, 216, 190, 0.3);
         }
 
+        .nav-arrow:focus {
+            outline: 2px solid rgba(0, 216, 190, 0.5);
+            outline-offset: 2px;
+        }
+
+        /* ====== RESPONSIVE DESIGN ====== */
         @media (max-width: 768px) {
             .persona-nav {
                 display: none;
@@ -743,6 +921,10 @@
 
             header {
                 padding: var(--spacing-md);
+            }
+
+            .header-container {
+                gap: var(--spacing-md);
             }
 
             .hero {
@@ -768,79 +950,126 @@
             .metrics {
                 grid-template-columns: 1fr;
                 padding: var(--spacing-lg);
+                margin: -2rem auto 0;
+                width: 95%;
             }
 
             .footer-container {
                 grid-template-columns: 1fr;
                 gap: var(--spacing-lg);
             }
-        }
 
-        /* ACCESSIBILITY */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+            .modal-content {
+                width: 95%;
+                padding: var(--spacing-lg);
+            }
+
+            .accordion-header {
+                padding: var(--spacing-md);
+            }
+
+            .accordion-body {
+                padding: var(--spacing-md);
+            }
+
+            .cta-button {
+                padding: 0.875rem 2rem;
+                font-size: 0.95rem;
             }
         }
 
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-teal);
-            color: white;
-            padding: var(--spacing-sm) var(--spacing-md);
-            text-decoration: none;
-            z-index: 100;
+        @media (max-width: 480px) {
+            html {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                font-size: 1.25rem;
+            }
+
+            .nav-link {
+                font-size: 0.9rem;
+                padding: var(--spacing-xs) 0.375rem;
+            }
+
+            .theme-controls {
+                gap: var(--spacing-sm);
+            }
+
+            .metrics {
+                width: 98%;
+            }
+
+            .footer-section h3 {
+                font-size: 1rem;
+            }
         }
 
-        .skip-link:focus {
-            top: 0;
+        /* ====== PRINT STYLES ====== */
+        @media print {
+            header,
+            .persona-nav,
+            .cta-section,
+            footer {
+                display: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .carousel-item,
+            .accordion-item {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header>
+    <header role="banner">
         <div class="header-container">
-            <div class="logo">Balaji Ganapathy</div>
+            <div class="logo" tabindex="0" role="button" aria-label="Balaji Ganapathy - Home">Balaji Ganapathy</div>
             <nav id="nav" aria-label="Main navigation">
-                <a href="#leader" class="nav-link active" data-persona="leader">Leader</a>
-                <a href="#speaker" class="nav-link" data-persona="speaker">Speaker</a>
-                <a href="#advisor" class="nav-link" data-persona="advisor">Advisor</a>
-                <a href="#coach" class="nav-link" data-persona="coach">Coach</a>
+                <a href="#leader" class="nav-link active" data-persona="leader" role="tab" aria-selected="true">Leader</a>
+                <a href="#speaker" class="nav-link" data-persona="speaker" role="tab" aria-selected="false">Speaker</a>
+                <a href="#advisor" class="nav-link" data-persona="advisor" role="tab" aria-selected="false">Advisor</a>
+                <a href="#coach" class="nav-link" data-persona="coach" role="tab" aria-selected="false">Coach</a>
             </nav>
-            <div style="display: flex; gap: var(--spacing-md); align-items: center;">
+            <div class="theme-controls">
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <main id="main-content">
-        <div class="persona-nav">
-            <button class="nav-arrow" id="prevPersona" aria-label="Previous persona">‹</button>
-            <button class="nav-arrow" id="nextPersona" aria-label="Next persona">›</button>
+    <main id="main-content" role="main">
+        <div class="persona-nav" aria-label="Persona navigation">
+            <button class="nav-arrow" id="prevPersona" aria-label="Previous persona" title="Previous persona">‹</button>
+            <button class="nav-arrow" id="nextPersona" aria-label="Next persona" title="Next persona">›</button>
         </div>
 
-        <div class="personas-container" id="personasContainer">
+        <div class="personas-container" id="personasContainer" role="tabpanel">
             <!-- LEADER PERSONA -->
-            <section class="persona" id="leader" data-persona="leader">
-                <div class="hero">
+            <section class="persona" id="leader" data-persona="leader" aria-labelledby="leaderTagline">
+                <div class="hero" role="img" aria-label="Leader hero section">
                     <div class="hero-content">
                         <h1 id="leaderTagline">Empowering Purpose. Enabling Impact. Transforming Leadership.</h1>
                         <p id="leaderSubtitle">25+ Years Transforming Global Impact</p>
                     </div>
                 </div>
 
-                <div class="metrics">
+                <div class="metrics" role="region" aria-label="Impact metrics">
                     <div class="metric-card">
                         <div class="metric-value" data-target="15990000">0</div>
                         <div class="metric-label">Lives Impacted</div>
@@ -855,29 +1084,29 @@
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Featured programs">
                     <h2>Featured Programs</h2>
-                    <div class="carousel-container" id="leaderPrograms">
+                    <div class="carousel-container" id="leaderPrograms" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Leadership philosophy">
                     <h2>Leadership Philosophy</h2>
                     <div style="background: white; padding: var(--spacing-xl); border-radius: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); align-items: center; margin: 0 auto; max-width: 1200px;" class="dark-mode-card">
                         <div>
                             <h3 id="philosophyTitle">Inspire. Transform. Lead.</h3>
                             <p id="philosophyText" style="color: #666; line-height: 1.8;">How organizations are redefining purpose and impact in the modern era.</p>
                         </div>
-                        <div style="height: 300px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                        <div style="height: 300px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem;" aria-hidden="true">
                             💡
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion">
+                <div class="accordion" role="region" aria-label="Speaking topics">
                     <h2>Speaking Topics</h2>
-                    <div id="leaderTopics">
+                    <div id="leaderTopics" role="tablist">
                         <!-- Populated by JS -->
                     </div>
                 </div>
@@ -888,37 +1117,37 @@
             </section>
 
             <!-- SPEAKER PERSONA -->
-            <section class="persona" id="speaker" data-persona="speaker">
-                <div class="hero">
+            <section class="persona" id="speaker" data-persona="speaker" aria-labelledby="speakerTagline">
+                <div class="hero" role="img" aria-label="Speaker hero section">
                     <div class="hero-content">
                         <h1 id="speakerTagline">Keynotes on Leadership, Impact & Transformation</h1>
                         <p>Global Speaker | 50+ International Engagements</p>
                     </div>
                 </div>
 
-                <div class="accordion">
+                <div class="accordion" role="region" aria-label="Speaking topics">
                     <h2>Speaking Topics</h2>
-                    <div id="speakerTopics">
+                    <div id="speakerTopics" role="tablist">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Featured engagements">
                     <h2>Featured Engagements</h2>
-                    <div class="carousel-container" id="speakerEngagements">
+                    <div class="carousel-container" id="speakerEngagements" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Speaking highlights gallery">
                     <h2>Speaking Highlights</h2>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); padding: var(--spacing-lg); max-width: 1400px; margin: 0 auto;">
-                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
-                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
-                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
-                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
-                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
-                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); padding: var(--spacing-lg); max-width: 1400px; margin: 0 auto;" role="img" aria-label="Gallery of speaking highlights">
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;" aria-hidden="true">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;" aria-hidden="true">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;" aria-hidden="true">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;" aria-hidden="true">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;" aria-hidden="true">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;" aria-hidden="true">📸</div>
                     </div>
                 </div>
 
@@ -928,31 +1157,31 @@
             </section>
 
             <!-- ADVISOR PERSONA -->
-            <section class="persona" id="advisor" data-persona="advisor">
-                <div class="hero">
+            <section class="persona" id="advisor" data-persona="advisor" aria-labelledby="advisorTagline">
+                <div class="hero" role="img" aria-label="Advisor hero section">
                     <div class="hero-content">
                         <h1 id="advisorTagline">Strategic Advisory for ESG & Social Impact</h1>
                         <p>Trusted Advisor to Fortune 500 Companies & Foundations</p>
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Expertise areas">
                     <h2>Expertise Areas</h2>
-                    <div class="carousel-container" id="advisorExpertise" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="carousel-container" id="advisorExpertise" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Client testimonials">
                     <h2>Testimonials</h2>
-                    <div class="carousel-container" id="advisorTestimonials">
+                    <div class="carousel-container" id="advisorTestimonials" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Case studies">
                     <h2>Case Studies</h2>
-                    <div class="carousel-container" id="advisorCaseStudies">
+                    <div class="carousel-container" id="advisorCaseStudies" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
@@ -963,31 +1192,31 @@
             </section>
 
             <!-- COACH PERSONA -->
-            <section class="persona" id="coach" data-persona="coach">
-                <div class="hero">
+            <section class="persona" id="coach" data-persona="coach" aria-labelledby="coachTagline">
+                <div class="hero" role="img" aria-label="Coach hero section">
                     <div class="hero-content">
                         <h1 id="coachTagline">Transforming Leaders, Teams & Organizations</h1>
                         <p>Executive Coach | Certified Leadership Practitioner</p>
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Coaching focus areas">
                     <h2>Coaching Focus Areas</h2>
-                    <div class="carousel-container" id="coachFocusAreas" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                    <div class="carousel-container" id="coachFocusAreas" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Transformation stories">
                     <h2>Transformation Stories</h2>
-                    <div class="carousel-container" id="coachStories">
+                    <div class="carousel-container" id="coachStories" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
 
-                <div class="carousel">
+                <div class="carousel" role="region" aria-label="Coaching packages">
                     <h2>Coaching Packages</h2>
-                    <div class="carousel-container" id="coachPackages" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="carousel-container" id="coachPackages" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));" role="list">
                         <!-- Populated by JS -->
                     </div>
                 </div>
@@ -1000,50 +1229,53 @@
     </main>
 
     <!-- CONTACT MODAL -->
-    <div class="modal" id="contactModal">
+    <div class="modal" id="contactModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
         <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">&times;</button>
-            <h2 class="modal-title">Let's Connect</h2>
-            <form id="contactForm" aria-label="Contact form">
+            <button class="modal-close" aria-label="Close contact form" title="Close form">&times;</button>
+            <h2 class="modal-title" id="modalTitle">Let's Connect</h2>
+            <form id="contactForm" aria-label="Contact form" novalidate>
                 <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required aria-required="true">
+                    <label for="name">Name <span aria-label="required">*</span></label>
+                    <input type="text" id="name" name="name" required aria-required="true" aria-describedby="nameError">
+                    <span id="nameError" style="display:none; color: #FF6B6B; font-size: 0.85rem;"></span>
                 </div>
                 <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required aria-required="true">
+                    <label for="email">Email <span aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-required="true" aria-describedby="emailError">
+                    <span id="emailError" style="display:none; color: #FF6B6B; font-size: 0.85rem;"></span>
                 </div>
                 <div class="form-group">
                     <label for="company">Organization</label>
-                    <input type="text" id="company" name="company">
+                    <input type="text" id="company" name="company" aria-label="Company or organization name">
                 </div>
                 <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                    <label for="message">Message <span aria-label="required">*</span></label>
+                    <textarea id="message" name="message" required aria-required="true" aria-describedby="messageError"></textarea>
+                    <span id="messageError" style="display:none; color: #FF6B6B; font-size: 0.85rem;"></span>
                 </div>
-                <button type="submit" class="modal-submit">Send Message</button>
+                <button type="submit" class="modal-submit" aria-label="Send your message">Send Message</button>
             </form>
         </div>
     </div>
 
-    <footer>
+    <footer role="contentinfo">
         <div class="footer-container">
             <div class="footer-section">
                 <h3>About</h3>
-                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Global social impact leader with 25+ years transforming organizations through purpose-driven strategies.</p>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Global social impact leader with 25+ years transforming organizations through purpose-driven strategies and sustainable practices.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#leader">Leader</a>
-                <a href="#speaker">Speaker</a>
-                <a href="#advisor">Advisor</a>
-                <a href="#coach">Coach</a>
+                <a href="#leader">Leader Page</a>
+                <a href="#speaker">Speaker Page</a>
+                <a href="#advisor">Advisor Page</a>
+                <a href="#coach">Coach Page</a>
             </div>
             <div class="footer-section">
                 <h3>Connect</h3>
-                <a href="https://linkedin.com/in/balajiganapathy" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="mailto:contact@balajiganapathy.com">Email</a>
-                <a href="#" onclick="document.getElementById('contactModal').classList.add('active'); return false;">Contact Form</a>
+                <a href="https://linkedin.com/in/balajiganapathy" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                <a href="mailto:contact@balajiganapathy.com">Email Me</a>
+                <a href="#" onclick="openContactForm(); return false;">Contact Form</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1052,7 +1284,7 @@
     </footer>
 
     <script>
-        // ============ STATE MANAGEMENT ============
+        // ============ COMPREHENSIVE STATE MANAGEMENT ============
         const state = {
             currentPersona: 'leader',
             personas: ['leader', 'speaker', 'advisor', 'coach'],
@@ -1063,55 +1295,92 @@
                 speaker: '#FFB400',
                 advisor: '#00D8BE',
                 coach: '#FFD700'
-            }
+            },
+            isInitialized: false,
+            touchStartX: 0,
+            touchEndX: 0
         };
 
-        // ============ INITIALIZATION ============
+        // ============ INITIALIZATION FUNCTION ============
         async function initialize() {
+            if (state.isInitialized) return;
+            
             console.log('🚀 Initializing portfolio...');
             
-            // Load persona data from JSON
+            // Load persona data from JSON files
             for (const persona of state.personas) {
                 try {
                     const response = await fetch(`_data/${persona}.json`);
                     if (response.ok) {
                         state.personaData[persona] = await response.json();
-                        console.log(`✅ Loaded ${persona}.json`);
+                        console.log(`✅ Loaded ${persona}.json successfully`);
                     } else {
-                        console.warn(`⚠️ ${persona}.json not found (status: ${response.status})`);
+                        console.warn(`⚠️ ${persona}.json not found (HTTP ${response.status})`);
+                        state.personaData[persona] = {};
                     }
                 } catch (error) {
-                    console.warn(`❌ Could not load ${persona}.json:`, error);
+                    console.warn(`❌ Error loading ${persona}.json:`, error.message);
+                    state.personaData[persona] = {};
                 }
             }
 
-            // Apply dark mode
+            // Apply dark mode if previously selected
             if (state.isDarkMode) {
                 document.body.classList.add('dark-mode');
                 document.getElementById('themeToggle').textContent = '☀️';
             }
 
-            // Populate UI
+            // Initial content population
             populatePersonaContent('leader');
             setupEventListeners();
+            setupAccessibility();
+            
+            state.isInitialized = true;
             console.log('✅ Portfolio initialized successfully!');
         }
 
-        // ============ POPULATE CONTENT ============
+        // ============ ACCESSIBILITY SETUP ============
+        function setupAccessibility() {
+            // Keyboard navigation for nav links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach((link, idx) => {
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        if (idx < navLinks.length - 1) navLinks[idx + 1].focus();
+                    } else if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        if (idx > 0) navLinks[idx - 1].focus();
+                    }
+                });
+            });
+
+            // Announce persona changes
+            const observer = new MutationObserver(() => {
+                const activeLink = document.querySelector('.nav-link.active');
+                if (activeLink) {
+                    console.log(`📢 Current persona: ${activeLink.textContent}`);
+                }
+            });
+
+            observer.observe(document.querySelector('nav'), { attributes: true, subtree: true });
+        }
+
+        // ============ POPULATE PERSONA CONTENT ============
         function populatePersonaContent(persona) {
             const data = state.personaData[persona] || {};
             const accent = data.colorAccent || state.currentAccents[persona];
             
-            // Set CSS variable for current accent
+            // Update CSS accent color
             document.documentElement.style.setProperty('--current-accent', accent);
 
-            // Populate hero
+            // Update hero tagline
             const taglineEl = document.getElementById(`${persona}Tagline`);
             if (taglineEl && data.tagline) {
                 taglineEl.textContent = data.tagline;
             }
 
-            // Persona-specific content
+            // Populate persona-specific content
             switch(persona) {
                 case 'leader':
                     populateLeader(data);
@@ -1127,36 +1396,39 @@
                     break;
             }
 
-            // Update nav highlight
+            // Update navigation active states
             document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.toggle('active', link.dataset.persona === persona);
+                const isActive = link.dataset.persona === persona;
+                link.classList.toggle('active', isActive);
+                link.setAttribute('aria-selected', isActive);
             });
 
             state.currentPersona = persona;
         }
 
+        // ============ POPULATE LEADER CONTENT ============
         function populateLeader(data) {
-            // Programs carousel
+            // Featured Programs
             const programsContainer = document.getElementById('leaderPrograms');
             if (data.programs && programsContainer) {
-                programsContainer.innerHTML = data.programs.map(prog => `
-                    <div class="carousel-item">
-                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">${prog.icon || '⭐'}</div>
+                programsContainer.innerHTML = data.programs.map((prog, idx) => `
+                    <div class="carousel-item" role="listitem" tabindex="0">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md);" aria-hidden="true">${prog.icon || '⭐'}</div>
                         <h3>${prog.title}</h3>
                         <p>${prog.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Speaking topics
+            // Speaking Topics Accordion
             const topicsContainer = document.getElementById('leaderTopics');
             if (data.speakingTopics && topicsContainer) {
                 topicsContainer.innerHTML = data.speakingTopics.map((topic, idx) => `
-                    <div class="accordion-item">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-item" role="tabpanel">
+                        <button class="accordion-header" onclick="toggleAccordion(this)" role="tab" aria-expanded="false">
                             <span>${topic.title}</span>
-                            <span class="accordion-icon">▼</span>
-                        </div>
+                            <span class="accordion-icon" aria-hidden="true">▼</span>
+                        </button>
                         <div class="accordion-content">
                             <div class="accordion-body">${topic.description}</div>
                         </div>
@@ -1165,54 +1437,62 @@
             }
         }
 
+        // ============ POPULATE SPEAKER CONTENT ============
         function populateSpeaker(data) {
-            // Topics accordion
+            // Topics Accordion
             const topicsContainer = document.getElementById('speakerTopics');
             if (data.topics && topicsContainer) {
                 topicsContainer.innerHTML = data.topics.map((topic, idx) => `
-                    <div class="accordion-item ${idx === 0 ? 'active' : ''}">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                    <div class="accordion-item" role="tabpanel" ${idx === 0 ? 'data-default-open="true"' : ''}>
+                        <button class="accordion-header" onclick="toggleAccordion(this)" role="tab" aria-expanded="${idx === 0}">
                             <span>${topic.title}</span>
-                            <span class="accordion-icon">▼</span>
-                        </div>
-                        <div class="accordion-content">
+                            <span class="accordion-icon" aria-hidden="true">▼</span>
+                        </button>
+                        <div class="accordion-content ${idx === 0 ? 'active' : ''}">
                             <div class="accordion-body">${topic.details || topic.description}</div>
                         </div>
                     </div>
                 `).join('');
+                
+                // Open first accordion by default
+                if (data.topics.length > 0) {
+                    const firstItem = topicsContainer.querySelector('.accordion-item');
+                    if (firstItem) firstItem.classList.add('active');
+                }
             }
 
-            // Engagements carousel
+            // Featured Engagements
             const engagementsContainer = document.getElementById('speakerEngagements');
             if (data.engagements && engagementsContainer) {
                 engagementsContainer.innerHTML = data.engagements.map(eng => `
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="listitem" tabindex="0">
                         <h3>${eng.title}</h3>
                         <p style="margin: var(--spacing-md) 0;"><strong>📅 ${eng.date}</strong></p>
                         <p><strong>📍 ${eng.location}</strong></p>
-                        <p style="margin-top: var(--spacing-md); opacity: 0.8;">${eng.type}</p>
+                        <p style="margin-top: var(--spacing-md); opacity: 0.8;">${eng.type || 'Conference'}</p>
                     </div>
                 `).join('');
             }
         }
 
+        // ============ POPULATE ADVISOR CONTENT ============
         function populateAdvisor(data) {
-            // Expertise carousel
+            // Expertise Areas
             const expertiseContainer = document.getElementById('advisorExpertise');
             if (data.expertise && expertiseContainer) {
                 expertiseContainer.innerHTML = data.expertise.map(exp => `
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="listitem" tabindex="0">
                         <h3>${exp.title}</h3>
                         <p>${exp.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Testimonials carousel
+            // Testimonials
             const testimonialsContainer = document.getElementById('advisorTestimonials');
             if (data.testimonials && testimonialsContainer) {
                 testimonialsContainer.innerHTML = data.testimonials.map(test => `
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="listitem" tabindex="0">
                         <p style="font-style: italic; margin-bottom: var(--spacing-md);">"${test.quote}"</p>
                         <p><strong>${test.author}</strong></p>
                         <p style="opacity: 0.7; font-size: 0.9rem;">${test.role}</p>
@@ -1220,12 +1500,12 @@
                 `).join('');
             }
 
-            // Case studies carousel
+            // Case Studies
             const caseStudiesContainer = document.getElementById('advisorCaseStudies');
             if (data.caseStudies && caseStudiesContainer) {
                 caseStudiesContainer.innerHTML = data.caseStudies.map(cs => `
-                    <div class="carousel-item">
-                        <div style="height: 150px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                    <div class="carousel-item" role="listitem" tabindex="0">
+                        <div style="height: 150px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;" aria-hidden="true">
                             <span style="font-size: 2rem;">📊</span>
                         </div>
                         <h3>${cs.title}</h3>
@@ -1235,24 +1515,25 @@
             }
         }
 
+        // ============ POPULATE COACH CONTENT ============
         function populateCoach(data) {
-            // Focus areas carousel
+            // Focus Areas
             const focusContainer = document.getElementById('coachFocusAreas');
             if (data.focusAreas && focusContainer) {
                 focusContainer.innerHTML = data.focusAreas.map(focus => `
-                    <div class="carousel-item">
+                    <div class="carousel-item" role="listitem" tabindex="0">
                         <h3>${focus.title}</h3>
                         <p>${focus.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Transformation stories carousel
+            // Transformation Stories
             const storiesContainer = document.getElementById('coachStories');
             if (data.transformationStories && storiesContainer) {
                 storiesContainer.innerHTML = data.transformationStories.map(story => `
-                    <div class="carousel-item">
-                        <div style="height: 150px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                    <div class="carousel-item" role="listitem" tabindex="0">
+                        <div style="height: 150px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;" aria-hidden="true">
                             <span style="font-size: 2rem;">🌟</span>
                         </div>
                         <h3>${story.title}</h3>
@@ -1261,11 +1542,11 @@
                 `).join('');
             }
 
-            // Coaching packages carousel
+            // Coaching Packages
             const packagesContainer = document.getElementById('coachPackages');
             if (data.packages && packagesContainer) {
                 packagesContainer.innerHTML = data.packages.map(pkg => `
-                    <div class="carousel-item" style="border: 2px solid var(--current-accent, #FFD700); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div class="carousel-item" role="listitem" tabindex="0" style="border: 2px solid var(--current-accent, #FFD700); display: flex; flex-direction: column; justify-content: space-between;">
                         <div>
                             <h3>${pkg.name}</h3>
                             <p style="margin: var(--spacing-md) 0;"><strong>Duration:</strong> ${pkg.duration}</p>
@@ -1277,15 +1558,13 @@
             }
         }
 
-        // ============ EVENT LISTENERS ============
+        // ============ SETUP EVENT LISTENERS ============
         function setupEventListeners() {
-            // Theme toggle
+            // Theme Toggle
             const themeToggle = document.getElementById('themeToggle');
-            if (themeToggle) {
-                themeToggle.addEventListener('click', toggleTheme);
-            }
+            themeToggle?.addEventListener('click', toggleTheme);
 
-            // Navigation
+            // Navigation Links
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -1296,113 +1575,70 @@
                 });
             });
 
-            // Arrow navigation
+            // Arrow Navigation
             const prevBtn = document.getElementById('prevPersona');
             const nextBtn = document.getElementById('nextPersona');
-            if (prevBtn) {
-                prevBtn.addEventListener('click', () => {
-                    const idx = state.personas.indexOf(state.currentPersona);
-                    const newIdx = (idx - 1 + state.personas.length) % state.personas.length;
-                    navigateToPersona(state.personas[newIdx]);
-                });
-            }
-            if (nextBtn) {
-                nextBtn.addEventListener('click', () => {
-                    const idx = state.personas.indexOf(state.currentPersona);
-                    const newIdx = (idx + 1) % state.personas.length;
-                    navigateToPersona(state.personas[newIdx]);
-                });
-            }
-
-            // Hamburger menu
-            const hamburger = document.getElementById('hamburger');
-            if (hamburger) {
-                hamburger.addEventListener('click', () => {
-                    hamburger.classList.toggle('active');
-                    const nav = document.getElementById('nav');
-                    if (nav) {
-                        nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-                    }
-                });
-            }
-
-            // CTA buttons
-            document.querySelectorAll('.cta-button').forEach(button => {
-                button.addEventListener('click', () => {
-                    const modal = document.getElementById('contactModal');
-                    if (modal) {
-                        modal.classList.add('active');
-                    }
-                });
+            
+            prevBtn?.addEventListener('click', () => {
+                const idx = state.personas.indexOf(state.currentPersona);
+                navigateToPersona(state.personas[(idx - 1 + state.personas.length) % state.personas.length]);
             });
 
-            // Modal
+            nextBtn?.addEventListener('click', () => {
+                const idx = state.personas.indexOf(state.currentPersona);
+                navigateToPersona(state.personas[(idx + 1) % state.personas.length]);
+            });
+
+            // Hamburger Menu
+            const hamburger = document.getElementById('hamburger');
+            hamburger?.addEventListener('click', toggleMobileMenu);
+
+            // CTA Buttons
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', openContactForm);
+            });
+
+            // Modal Controls
             const modal = document.getElementById('contactModal');
             const modalClose = document.querySelector('.modal-close');
-            if (modalClose) {
-                modalClose.addEventListener('click', () => {
-                    if (modal) {
-                        modal.classList.remove('active');
-                    }
-                });
-            }
-
-            if (modal) {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                    }
-                });
-            }
-
-            // Form submission
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault();
-                    alert('Thank you for reaching out! We will get back to you soon.');
-                    if (modal) {
-                        modal.classList.remove('active');
-                    }
-                    contactForm.reset();
-                });
-            }
-
-            // Touch swipe navigation
-            let touchStart = 0;
-            let touchEnd = 0;
-
-            document.addEventListener('touchstart', (e) => {
-                touchStart = e.changedTouches[0].screenX;
+            
+            modalClose?.addEventListener('click', closeContactForm);
+            modal?.addEventListener('click', (e) => {
+                if (e.target === modal) closeContactForm();
             });
+
+            // Form Submission
+            const form = document.getElementById('contactForm');
+            form?.addEventListener('submit', handleFormSubmit);
+
+            // Touch Swipe Navigation
+            document.addEventListener('touchstart', (e) => {
+                state.touchStartX = e.changedTouches[0].screenX;
+            }, false);
 
             document.addEventListener('touchend', (e) => {
-                touchEnd = e.changedTouches[0].screenX;
+                state.touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
-            });
+            }, false);
 
-            function handleSwipe() {
-                if (touchStart - touchEnd > 50) {
-                    // Swiped left
-                    const idx = state.personas.indexOf(state.currentPersona);
-                    navigateToPersona(state.personas[(idx + 1) % state.personas.length]);
-                } else if (touchEnd - touchStart > 50) {
-                    // Swiped right
-                    const idx = state.personas.indexOf(state.currentPersona);
-                    navigateToPersona(state.personas[(idx - 1 + state.personas.length) % state.personas.length]);
-                }
-            }
-
-            // Keyboard navigation
+            // Keyboard Navigation
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowRight') {
-                    nextBtn.click();
+                    e.preventDefault();
+                    nextBtn?.click();
                 } else if (e.key === 'ArrowLeft') {
-                    prevBtn.click();
+                    e.preventDefault();
+                    prevBtn?.click();
+                } else if (e.key === 'Escape') {
+                    closeContactForm();
                 }
             });
+
+            // Scroll Events
+            window.addEventListener('scroll', handleScroll);
         }
 
+        // ============ THEME TOGGLE FUNCTION ============
         function toggleTheme() {
             state.isDarkMode = !state.isDarkMode;
             console.log('🌓 Dark mode toggled to:', state.isDarkMode);
@@ -1415,26 +1651,43 @@
             }
             
             localStorage.setItem('darkMode', state.isDarkMode ? 'true' : 'false');
-            console.log('💾 localStorage saved:', localStorage.getItem('darkMode'));
+            console.log('💾 Dark mode preference saved');
         }
 
+        // ============ MOBILE MENU TOGGLE ============
+        function toggleMobileMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            
+            if (hamburger && nav) {
+                hamburger.classList.toggle('active');
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+                hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
+            }
+        }
+
+        // ============ ACCORDION TOGGLE ============
         function toggleAccordion(header) {
             const item = header.parentElement;
             const isActive = item.classList.contains('active');
             
-            // Close all other accordion items in the same container
-            if (item.parentElement) {
-                item.parentElement.querySelectorAll('.accordion-item').forEach(acc => {
+            // Close sibling items
+            const container = item.parentElement;
+            if (container) {
+                container.querySelectorAll('.accordion-item').forEach(acc => {
                     acc.classList.remove('active');
+                    acc.querySelector('[role="tab"]')?.setAttribute('aria-expanded', 'false');
                 });
             }
             
             // Toggle current item
             if (!isActive) {
                 item.classList.add('active');
+                header.setAttribute('aria-expanded', 'true');
             }
         }
 
+        // ============ PERSONA NAVIGATION ============
         function navigateToPersona(persona) {
             const idx = state.personas.indexOf(persona);
             if (idx === -1) return;
@@ -1443,19 +1696,86 @@
             if (container) {
                 container.style.transform = `translateX(-${idx * 100}%)`;
             }
+            
             populatePersonaContent(persona);
-            console.log(`🎯 Navigated to: ${persona}`);
+            console.log(`🎯 Navigated to: ${persona} (${idx + 1}/4)`);
         }
 
-        // ============ PARALLAX EFFECT ============
-        window.addEventListener('scroll', () => {
+        // ============ CONTACT FORM MANAGEMENT ============
+        function openContactForm() {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                document.getElementById('name')?.focus();
+            }
+        }
+
+        function closeContactForm() {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            console.log('📧 Form submitted:', { name, email, message });
+            alert('Thank you for reaching out! We will get back to you soon.');
+            closeContactForm();
+            document.getElementById('contactForm').reset();
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // ============ SWIPE HANDLING ============
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = state.touchStartX - state.touchEndX;
+            
+            if (Math.abs(diff) < threshold) return;
+            
+            const idx = state.personas.indexOf(state.currentPersona);
+            if (diff > 0) {
+                // Swiped left
+                navigateToPersona(state.personas[(idx + 1) % state.personas.length]);
+            } else {
+                // Swiped right
+                navigateToPersona(state.personas[(idx - 1 + state.personas.length) % state.personas.length]);
+            }
+        }
+
+        // ============ SCROLL EFFECTS ============
+        function handleScroll() {
+            // Parallax effect
             const scrolled = window.pageYOffset;
             const parallaxOffset = scrolled * 0.5;
             document.documentElement.style.setProperty('--parallax-offset', `-${parallaxOffset}px`);
 
-            // Animate metric counters on scroll
+            // Animate metrics
             animateMetricsOnScroll();
-        });
+        }
 
         function animateMetricsOnScroll() {
             const metrics = document.querySelectorAll('.metric-value[data-target]');
@@ -1464,21 +1784,35 @@
                 const current = parseInt(metric.textContent.replace(/[^0-9]/g, ''));
                 
                 if (current < target && window.scrollY > 100) {
-                    const increment = Math.ceil((target - current) / 50);
+                    const increment = Math.max(1, Math.ceil((target - current) / 50));
                     metric.textContent = current + increment;
                 }
             });
         }
 
-        // ============ START ============
-        document.addEventListener('DOMContentLoaded', initialize);
-        
-        // Fallback if DOM is already loaded
+        // ============ INITIALIZATION START ============
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initialize);
         } else {
             initialize();
         }
+
+        // Helper function to open contact form from footer
+        function openContactForm() {
+            const modal = document.getElementById('contactModal');
+            if (modal) {
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                document.getElementById('name')?.focus();
+                console.log('📝 Contact form opened');
+            }
+        }
+
+        // Log page interactions for analytics
+        window.addEventListener('beforeunload', () => {
+            console.log(`📊 Session ended on persona: ${state.currentPersona}`);
+        });
     </script>
 </body>
 </html>
