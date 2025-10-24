@@ -1,0 +1,23 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Build/Dependencies
+node_modules/
+dist/
+*.log
+npm-debug.log
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# CMS/Netlify
+.cache/
+.netlify/
+
+# Environment
+.env
+.env.local
