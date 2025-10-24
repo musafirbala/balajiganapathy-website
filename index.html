@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Balaji Ganapathy - Global Social Impact Executive | 25+ Years Transforming Lives">
+    <meta name="theme-color" content="#000000">
+    <meta name="og:title" content="Balaji Ganapathy - Social Impact Leadership">
+    <meta name="og:description" content="CSR, ESG, Social Impact, Keynotes, and Transformational Leadership">
+    <title>Balaji Ganapathy | Global Social Impact Executive</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #00D8BE;
+            --secondary-color: #FFB400;
+            --accent-dark: #002B49;
+            --text-light: #FFFFFF;
+            --text-dark: #1A1A1A;
+            --bg-dark: #0F0F0F;
+            --bg-light: #F5F5F5;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body.light-mode {
+            background: var(--bg-light);
+            color: var(--text-dark);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 15, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transition: background 0.3s ease;
+        }
+
+        body.light-mode header {
+            background: rgba(245, 245, 245, 0.95);
+            border-bottom-color: rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: inherit;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.25rem;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: inherit;
+            cursor: pointer;
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.4rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: currentColor;
+            transition: var(--transition);
+        }
+
+        .personas-container {
+            display: flex;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .persona {
+            flex: 0 0 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 4rem 2rem;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(0);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 1) 0%, rgba(2, 43, 73, 0.3) 100%);
+        }
+
+        body.light-mode .persona {
+            background: linear-gradient(135deg, rgba(245, 245, 245, 1) 0%, rgba(200, 220, 240, 0.2) 100%);
+        }
+
+        .persona.slide-left {
+            transform: translateX(-100%);
+        }
+
+        .persona.slide-right {
+            transform: translateX(100%);
+        }
+
+        .persona-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        body.light-mode .hero p {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 216, 190, 0.1);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .metric:hover {
+            background: rgba(0, 216, 190, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        body.light-mode .metric-label {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-dark);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            margin: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: width 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            width: 100%;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(0, 216, 190, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(0, 216, 190, 0); }
+        }
+
+        .cta-button:hover {
+            animation: pulse 0.6s ease-out;
+            transform: translateY(-2px);
+        }
+
+        .carousel-container {
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 1rem;
+            scroll-behavior: smooth;
+        }
+
+        .carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+        }
+
+        .carousel::-webkit-scrollbar-thumb {
+            background: rgba(0, 216, 190, 0.5);
+            border-radius: 4px;
+        }
+
+        .carousel-item {
+            flex: 0 0 280px;
+            padding: 2rem;
+            background: rgba(0, 216, 190, 0.05);
+            border: 1px solid rgba(0, 216, 190, 0.2);
+            border-radius: 12px;
+            scroll-snap-align: start;
+            transition: var(--transition);
+        }
+
+        .carousel-item:hover {
+            background: rgba(0, 216, 190, 0.15);
+            border-color: rgba(0, 216, 190, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .carousel-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .accordion {
+            margin: 2rem 0;
+        }
+
+        .accordion-item {
+            border: 1px solid rgba(0, 216, 190, 0.2);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            background: rgba(0, 216, 190, 0.05);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: rgba(0, 216, 190, 0.15);
+        }
+
+        .accordion-header.active {
+            background: rgba(0, 216, 190, 0.2);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-content.active {
+            max-height: 500px;
+            padding: 1.5rem;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-dark);
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        body.light-mode .modal-content {
+            background: var(--bg-light);
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(0, 216, 190, 0.3);
+            border-radius: 6px;
+            background: rgba(0, 216, 190, 0.05);
+            color: inherit;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            background: rgba(0, 216, 190, 0.1);
+        }
+
+        .floating-chat {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 216, 190, 0.3);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .floating-chat:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-chat::after {
+            content: '💬';
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 216, 190, 0.2);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        body.light-mode footer {
+            background: rgba(245, 245, 245, 0.9);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        body.light-mode .footer-section a {
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(0, 216, 190, 0.1);
+            padding-top: 2rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        body.light-mode .footer-bottom {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .parallax {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parallax::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.05));
+            transform: translateY(var(--parallax-offset, 0px));
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-item {
+                flex: 0 0 90%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Balaji Ganapathy</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a class="nav-link active" onclick="showPersona(0)">Leader</a></li>
+                    <li><a class="nav-link" onclick="showPersona(1)">Speaker</a></li>
+                    <li><a class="nav-link" onclick="showPersona(2)">Advisor</a></li>
+                    <li><a class="nav-link" onclick="showPersona(3)">Coach</a></li>
+                </ul>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="personas-container" id="personasContainer">
+        <!-- Leader Persona -->
+        <section class="persona" id="persona-0">
+            <div class="persona-content">
+                <div class="hero parallax">
+                    <h1>Empowering Purpose. Enabling Impact. Transforming Leadership.</h1>
+                    <p class="subtitle">25+ Years Transforming Global Impact</p>
+                    <p>Transforming lives through education and digital literacy programs globally.</p>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value" data-target="15.99M">0M</div>
+                        <div class="metric-label">Lives Impacted</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" data-target="50+">0</div>
+                        <div class="metric-label">Countries</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" data-target="₹500Cr">0</div>
+                        <div class="metric-label">CSR Investment</div>
+                    </div>
+                </div>
+
+                <div class="carousel-container">
+                    <h2>Featured Programs</h2>
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <h3>Digital Literacy</h3>
+                            <p>Enabling equitable technology access across 15 million+ lives in emerging markets.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Educational Excellence</h3>
+                            <p>Developing comprehensive frameworks for sustainable impact measurement.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Healthcare Innovation</h3>
+                            <p>Building sustainable healthcare access in underserved communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <button class="cta-button" onclick="openModal()">Let's Discuss Your Impact Goals</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaker Persona -->
+        <section class="persona" id="persona-1">
+            <div class="persona-content">
+                <div class="hero">
+                    <h1>Keynotes on Leadership, Impact & Transformation</h1>
+                    <p class="subtitle">Inspire. Transform. Lead.</p>
+                    <p>How organizations are redefining purpose and impact in the modern era.</p>
+                </div>
+
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(event)">
+                            <span>Creating Cultures of Belonging & Equity</span>
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Authentic engagement and inclusive leadership frameworks that drive organizational transformation and create meaningful workplace cultures.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(event)">
+                            <span>From Theory to Action: Impact Measurement</span>
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Frameworks for sustainable impact measurement that bridge strategy and execution, enabling data-driven decision-making.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(event)">
+                            <span>Inclusive Growth & Digital Transformation</span>
+                            <span>+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Strategic approaches to ensuring technology adoption benefits all stakeholders and creates equitable outcomes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <button class="cta-button" onclick="openModal()">Book a Keynote</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advisor Persona -->
+        <section class="persona" id="persona-2">
+            <div class="persona-content">
+                <div class="hero">
+                    <h1>Strategic Advisory for ESG & Social Impact</h1>
+                    <p class="subtitle">Strategy. Execution. Scale.</p>
+                    <p>Developing comprehensive Environmental, Social & Governance roadmaps.</p>
+                </div>
+
+                <div class="carousel-container">
+                    <h2>Testimonials</h2>
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <p>"Balaji's strategic guidance transformed our CSR initiatives into measurable business value."</p>
+                            <strong>Fortune 500 CHRO</strong>
+                        </div>
+                        <div class="carousel-item">
+                            <p>"His ESG expertise helped us navigate complex compliance while driving authentic impact."</p>
+                            <strong>Global CEO</strong>
+                        </div>
+                        <div class="carousel-item">
+                            <p>"Rare combination of strategic depth and implementation excellence."</p>
+                            <strong>Private Equity Partner</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <button class="cta-button" onclick="openModal()">Let's Align on Your ESG Roadmap</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coach Persona -->
+        <section class="persona" id="persona-3">
+            <div class="persona-content">
+                <div class="hero">
+                    <h1>Transforming Leaders, Teams & Organizations</h1>
+                    <p class="subtitle">Growth. Purpose. Excellence.</p>
+                    <p>Developing transformational leaders equipped for global impact.</p>
+                </div>
+
+                <div class="carousel-container">
+                    <h2>Transformation Stories</h2>
+                    <div class="carousel">
+                        <div class="carousel-item">
+                            <h3>Executive Leadership</h3>
+                            <p>Coached 50+ C-suite executives on authentic leadership and inclusive decision-making.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Team Alignment</h3>
+                            <p>Built high-performing, inclusive teams with shared purpose and measurable impact.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <h3>Career Pivots</h3>
+                            <p>Navigated pivotal career moments and strategic transitions for global leaders.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <button class="cta-button" onclick="openModal()">Explore Executive Coaching</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <h2>Let's Connect</h2>
+            <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required aria-label="Your name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required aria-label="Email address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required aria-label="Message"></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Chat -->
+    <div class="floating-chat" onclick="openModal()" title="AI Assistant" role="button" tabindex="0"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>25+ years of transformational leadership in global social impact, CSR, and sustainable business practices.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#persona-0">Leadership</a></li>
+                    <li><a href="#persona-1">Speaking</a></li>
+                    <li><a href="#persona-2">Advisory</a></li>
+                    <li><a href="#persona-3">Coaching</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://twitter.com" target="_blank">Twitter</a></li>
+                    <li><a href="mailto:contact@balajiganapathy.com">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Balaji Ganapathy. All rights reserved. | Phase 3 Parity Build</p>
+        </div>
+    </footer>
+
+    <script>
+        // State management
+        let currentPersona = 0;
+        const personas = ['leader', 'speaker', 'advisor', 'coach'];
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            animateMetrics();
+            setupGestureListeners();
+            loadCMSData();
+            applyTheme();
+        });
+
+        // Theme toggle
+        function toggleTheme() {
+            const isDark = document.body.classList.toggle('light-mode');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            const icon = document.querySelector('.theme-toggle');
+            icon.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+        }
+
+        function applyTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light' || (!saved && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+                document.body.classList.add('light-mode');
+            }
+            updateThemeIcon();
+        }
+
+        // Persona navigation with swipe
+        function showPersona(index) {
+            const container = document.getElementById('personasContainer');
+            const personas = container.querySelectorAll('.persona');
+
+            personas.forEach((p, i) => {
+                p.classList.remove('slide-left', 'slide-right');
+                if (i < index) p.classList.add('slide-left');
+                if (i > index) p.classList.add('slide-right');
+            });
+
+            currentPersona = index;
+            updateNavLinks();
+        }
+
+        function updateNavLinks() {
+            document.querySelectorAll('.nav-link').forEach((link, i) => {
+                link.classList.toggle('active', i === currentPersona);
+            });
+        }
+
+        // Gesture support
+        function setupGestureListeners() {
+            document.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            document.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+        }
+
+        function handleSwipe() {
+            const threshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > threshold) {
+                if (diff > 0) {
+                    // Swipe left - go to next persona
+                    const nextPersona = (currentPersona + 1) % personas.length;
+                    showPersona(nextPersona);
+                } else {
+                    // Swipe right - go to previous persona
+                    const prevPersona = (currentPersona - 1 + personas.length) % personas.length;
+                    showPersona(prevPersona);
+                }
+            }
+        }
+
+        // Accordion toggle
+        function toggleAccordion(event) {
+            const header = event.currentTarget;
+            const content = header.nextElementSibling;
+
+            document.querySelectorAll('.accordion-content').forEach(c => {
+                if (c !== content) c.classList.remove('active');
+            });
+            document.querySelectorAll('.accordion-header').forEach(h => {
+                if (h !== header) h.classList.remove('active');
+            });
+
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // Metric animation
+        function animateMetrics() {
+            const metrics = document.querySelectorAll('.metric-value');
+            metrics.forEach(metric => {
+                const target = metric.getAttribute('data-target');
+                animateValue(metric, target);
+            });
+        }
+
+        function animateValue(element, target) {
+            if (target.includes('M')) {
+                const num = parseFloat(target);
+                let current = 0;
+                const increment = num / 30;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= num) {
+                        element.textContent = num + 'M';
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = current.toFixed(2) + 'M';
+                    }
+                }, 50);
+            } else if (target.includes('₹')) {
+                element.textContent = target;
+            } else {
+                element.textContent = target;
+            }
+        }
+
+        // Modal management
+        function openModal() {
+            document.getElementById('contactModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').classList.remove('active');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            console.log('Form submitted:', Object.fromEntries(formData));
+            alert('Thank you! We'll be in touch soon.');
+            closeModal();
+            event.target.reset();
+        }
+
+        // CMS Data loading (mock)
+        async function loadCMSData() {
+            try {
+                // This would typically fetch from _data/leader.json, etc.
+                console.log('CMS data loaded successfully');
+            } catch (error) {
+                console.error('Error loading CMS data:', error);
+            }
+        }
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const offset = window.scrollY;
+            document.querySelectorAll('.parallax').forEach(el => {
+                el.style.setProperty('--parallax-offset', offset * 0.5 + 'px');
+            });
+        });
+
+        // Close modal on outside click
+        document.getElementById('contactModal').addEventListener('click', (e) => {
+            if (e.target.id === 'contactModal') closeModal();
+        });
+    </script>
+</body>
+</html>
