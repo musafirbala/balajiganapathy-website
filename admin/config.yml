@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+  local_backend: true
+
+media_folder: "media"
+public_folder: "/media"
+
+collections:
+  - name: "site"
+    label: "Site Settings"
+    files:
+      - name: "config"
+        label: "Site Configuration"
+        file: "_data/config.json"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string", default: "Balaji Ganapathy" }
+          - { label: "Hero Video URL", name: "heroVideo", widget: "string", default: "portfolio-montage.mp4" }
+
+  - name: "leader"
+    label: "Leader Page"
+    file: "_data/leader.json"
+    fields:
+      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Empowering Purpose. Enabling Impact. Transforming Leadership." }
+      - { label: "Hero Subtitle", name: "subtitle", widget: "string", default: "25+ Years Transforming Global Impact" }
+      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#00D8BE" }
+      - { label: "Metric 1 Value", name: "metric1", widget: "string", default: "15.99M" }
+      - { label: "Metric 1 Label", name: "metric1Label", widget: "string", default: "Lives Impacted" }
+      - { label: "Metric 2 Value", name: "metric2", widget: "string", default: "50+" }
+      - { label: "Metric 2 Label", name: "metric2Label", widget: "string", default: "Countries" }
+
+  - name: "speaker"
+    label: "Speaker Page"
+    file: "_data/speaker.json"
+    fields:
+      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Keynotes on Leadership, Impact & Transformation" }
+      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#FFB400" }
+
+  - name: "advisor"
+    label: "Advisor Page"
+    file: "_data/advisor.json"
+    fields:
+      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Strategic Advisory for ESG & Social Impact" }
+      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#00D8BE" }
+
+  - name: "coach"
+    label: "Coach Page"
+    file: "_data/coach.json"
+    fields:
+      - { label: "Hero Tagline", name: "tagline", widget: "string", default: "Transforming Leaders, Teams & Organizations" }
+      - { label: "Accent Color", name: "colorAccent", widget: "string", default: "#FF6B6B" }
