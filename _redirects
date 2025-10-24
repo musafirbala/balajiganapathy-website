@@ -1,2 +1,5 @@
+# SPA catch-all route
 /*  /index.html  200
-/admin/index.html  200
+
+# Admin panel route
+/admin  /admin/index.html  200
