@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Balaji Ganapathy - 25+ years global social impact leader | CSR, ESG, Philanthropy, Executive Coach">
+    <meta name="keywords" content="social impact, CSR, ESG, leadership, executive coach, sustainability">
+    <meta name="author" content="Balaji Ganapathy">
+    <meta property="og:title" content="Balaji Ganapathy - Global Social Impact Executive">
+    <meta property="og:type" content="profile">
+    <meta property="og:image" content="/media/og-image.jpg">
+    <meta property="og:url" content="https://balajiganapathy.com">
+    <title>Balaji Ganapathy | Global Social Impact Executive</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-teal: #00D8BE;
+            --color-coral: #FF6B6B;
+            --color-orange: #FFB400;
+            --color-gold: #FFD700;
+            --color-dark-bg: #0A0E27;
+            --color-light-bg: #F8F9FA;
+            --color-card-dark: #1A1F3A;
+            --color-text-light: #F0F2F5;
+            --color-text-dark: #1A1A2E;
+            --color-border: #2C3E5A;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--color-light-bg);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            transition: background 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background: var(--color-dark-bg);
+            color: var(--color-text-light);
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            padding: var(--spacing-md) var(--spacing-lg);
+        }
+
+        body.dark-mode header {
+            background: rgba(10, 14, 39, 0.95);
+            border-bottom-color: var(--color-border);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-teal), var(--color-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--color-text-dark);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        body.dark-mode .nav-link {
+            color: var(--color-text-light);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--current-accent, var(--color-teal));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active {
+            color: var(--current-accent, var(--color-teal));
+            font-weight: 600;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            padding: var(--spacing-xs);
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(20deg);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 0.4rem;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--color-text-dark);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        body.dark-mode .hamburger span {
+            background: var(--color-text-light);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* PERSONAS SECTION */
+        main {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .personas-container {
+            display: flex;
+            width: 100%;
+            transition: transform 0.35s var(--transition-ease);
+        }
+
+        .persona {
+            flex: 0 0 100%;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1));
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            transform: translateY(var(--parallax-offset, 0));
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--color-text-dark);
+            opacity: 0.8;
+            animation: fadeInUp 0.8s ease-out 0.1s backwards;
+            margin-bottom: var(--spacing-md);
+        }
+
+        body.dark-mode .hero p {
+            color: var(--color-text-light);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* METRICS SECTION */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            padding: var(--spacing-xl);
+            background: var(--color-light-bg);
+            max-width: 1400px;
+            margin: -3rem auto 0;
+            position: relative;
+            z-index: 20;
+        }
+
+        body.dark-mode .metrics {
+            background: var(--color-dark-bg);
+        }
+
+        .metric-card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 216, 190, 0.1);
+        }
+
+        body.dark-mode .metric-card {
+            background: var(--color-card-dark);
+            border-color: var(--color-border);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 216, 190, 0.15);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--current-accent, var(--color-teal));
+            margin-bottom: var(--spacing-sm);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .metric-label {
+            font-size: 0.95rem;
+            color: #999;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        body.dark-mode .metric-label {
+            color: #aaa;
+        }
+
+        /* CAROUSEL */
+        .carousel {
+            padding: var(--spacing-xl) var(--spacing-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .carousel h2 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 700;
+        }
+
+        .carousel-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: var(--spacing-md);
+            scroll-behavior: smooth;
+        }
+
+        .carousel-item {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.dark-mode .carousel-item {
+            background: var(--color-card-dark);
+            border-color: var(--color-border);
+        }
+
+        .carousel-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        body.dark-mode .carousel-item:hover {
+            box-shadow: 0 15px 40px rgba(0, 216, 190, 0.1);
+        }
+
+        .carousel-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        .carousel-item p {
+            font-size: 0.95rem;
+            color: #666;
+            flex-grow: 1;
+        }
+
+        body.dark-mode .carousel-item p {
+            color: #aaa;
+        }
+
+        /* ACCORDION */
+        .accordion {
+            padding: var(--spacing-xl) var(--spacing-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .accordion h2 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-lg);
+            font-weight: 700;
+        }
+
+        .accordion-item {
+            background: white;
+            margin-bottom: var(--spacing-md);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .accordion-item {
+            background: var(--color-card-dark);
+            border-color: var(--color-border);
+        }
+
+        .accordion-header {
+            padding: var(--spacing-lg);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: rgba(0, 216, 190, 0.05);
+            color: var(--current-accent, var(--color-teal));
+        }
+
+        body.dark-mode .accordion-header:hover {
+            background: rgba(0, 216, 190, 0.1);
+        }
+
+        .accordion-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        body.dark-mode .accordion-content {
+            border-top-color: var(--color-border);
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+
+        .accordion-body {
+            padding: var(--spacing-lg);
+            color: #666;
+        }
+
+        body.dark-mode .accordion-body {
+            color: #aaa;
+        }
+
+        /* CTA BUTTON */
+        .cta-section {
+            padding: var(--spacing-xl) var(--spacing-lg);
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 216, 190, 0.08), transparent);
+        }
+
+        body.dark-mode .cta-section {
+            background: rgba(0, 216, 190, 0.05);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: var(--current-accent, var(--color-teal));
+            color: white;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0, 216, 190, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(0, 216, 190, 0.2);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(0, 216, 190, 0.35);
+            }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 216, 190, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* MODAL */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: 16px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        body.dark-mode .modal-content {
+            background: var(--color-card-dark);
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--spacing-lg);
+            right: var(--spacing-lg);
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--color-text-dark);
+        }
+
+        body.dark-mode .modal-close:hover {
+            color: var(--color-text-light);
+        }
+
+        .modal-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: var(--spacing-sm);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .form-group input,
+        body.dark-mode .form-group textarea {
+            background: rgba(0, 216, 190, 0.05);
+            border-color: var(--color-border);
+            color: var(--color-text-light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--current-accent, var(--color-teal));
+            box-shadow: 0 0 0 3px rgba(0, 216, 190, 0.1);
+        }
+
+        .modal-submit {
+            width: 100%;
+            padding: var(--spacing-md);
+            background: var(--current-accent, var(--color-teal));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .modal-submit:hover {
+            filter: brightness(1.1);
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--color-text-dark);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        body.dark-mode footer {
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        .footer-section a {
+            display: block;
+            margin-bottom: var(--spacing-sm);
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--color-teal);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* NAVIGATION ARROWS */
+        .persona-nav {
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            padding: 0 var(--spacing-lg);
+            pointer-events: none;
+            z-index: 500;
+        }
+
+        .nav-arrow {
+            width: 50px;
+            height: 50px;
+            background: var(--current-accent, var(--color-teal));
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            transition: all 0.3s ease;
+            pointer-events: auto;
+            opacity: 0.7;
+        }
+
+        .nav-arrow:hover {
+            opacity: 1;
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 216, 190, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .persona-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+            }
+
+            header {
+                padding: var(--spacing-md);
+            }
+
+            .hero {
+                height: 45vh;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .carousel-container {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-item {
+                min-height: 200px;
+            }
+
+            .carousel {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+                padding: var(--spacing-lg);
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+        }
+
+        /* ACCESSIBILITY */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--color-teal);
+            color: white;
+            padding: var(--spacing-sm) var(--spacing-md);
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">Balaji Ganapathy</div>
+            <nav id="nav" aria-label="Main navigation">
+                <a href="#leader" class="nav-link active" data-persona="leader">Leader</a>
+                <a href="#speaker" class="nav-link" data-persona="speaker">Speaker</a>
+                <a href="#advisor" class="nav-link" data-persona="advisor">Advisor</a>
+                <a href="#coach" class="nav-link" data-persona="coach">Coach</a>
+            </nav>
+            <div style="display: flex; gap: var(--spacing-md); align-items: center;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="persona-nav">
+            <button class="nav-arrow" id="prevPersona" aria-label="Previous persona">‹</button>
+            <button class="nav-arrow" id="nextPersona" aria-label="Next persona">›</button>
+        </div>
+
+        <div class="personas-container" id="personasContainer">
+            <!-- LEADER PERSONA -->
+            <section class="persona" id="leader" data-persona="leader">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 id="leaderTagline">Empowering Purpose. Enabling Impact. Transforming Leadership.</h1>
+                        <p id="leaderSubtitle">25+ Years Transforming Global Impact</p>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="15990000">0</div>
+                        <div class="metric-label" id="metric1Label">Lives Impacted</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" data-target="50">0</div>
+                        <div class="metric-label" id="metric2Label">Countries</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">₹500Cr</div>
+                        <div class="metric-label">CSR Investment</div>
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Featured Programs</h2>
+                    <div class="carousel-container" id="leaderPrograms">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Leadership Philosophy</h2>
+                    <div style="background: white; padding: var(--spacing-xl); border-radius: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); align-items: center;" class="dark-mode-card">
+                        <div>
+                            <h3 id="philosophyTitle">Inspire. Transform. Lead.</h3>
+                            <p id="philosophyText" style="color: #666; line-height: 1.8;">How organizations are redefining purpose and impact in the modern era.</p>
+                        </div>
+                        <div style="height: 300px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            💡
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <h2>Speaking Topics</h2>
+                    <div id="leaderTopics">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="cta-button" id="leaderCTA" aria-label="Book strategic advisory call">Book Strategic Advisory Call</button>
+                </div>
+            </section>
+
+            <!-- SPEAKER PERSONA -->
+            <section class="persona" id="speaker" data-persona="speaker">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 id="speakerTagline">Keynotes on Leadership, Impact & Transformation</h1>
+                        <p>Global Speaker | 50+ International Engagements</p>
+                    </div>
+                </div>
+
+                <div class="accordion">
+                    <h2>Speaking Topics</h2>
+                    <div id="speakerTopics">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Featured Engagements</h2>
+                    <div class="carousel-container" id="speakerEngagements">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Speaking Highlights</h2>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--spacing-md); padding: var(--spacing-lg); max-width: 1400px; margin: 0 auto;">
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                        <div style="aspect-ratio: 1; background: linear-gradient(135deg, rgba(255, 180, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">📸</div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="cta-button" id="speakerCTA" aria-label="Book for your conference">Book for Your Conference</button>
+                </div>
+            </section>
+
+            <!-- ADVISOR PERSONA -->
+            <section class="persona" id="advisor" data-persona="advisor">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 id="advisorTagline">Strategic Advisory for ESG & Social Impact</h1>
+                        <p>Trusted Advisor to Fortune 500 Companies & Foundations</p>
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Expertise Areas</h2>
+                    <div class="carousel-container" id="advisorExpertise" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Testimonials</h2>
+                    <div class="carousel-container" id="advisorTestimonials">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Case Studies</h2>
+                    <div class="carousel-container" id="advisorCaseStudies">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="cta-button" id="advisorCTA" aria-label="Request consulting engagement">Request Consulting Engagement</button>
+                </div>
+            </section>
+
+            <!-- COACH PERSONA -->
+            <section class="persona" id="coach" data-persona="coach">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1 id="coachTagline">Transforming Leaders, Teams & Organizations</h1>
+                        <p>Executive Coach | Certified Leadership Practitioner</p>
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Coaching Focus Areas</h2>
+                    <div class="carousel-container" id="coachFocusAreas" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Transformation Stories</h2>
+                    <div class="carousel-container" id="coachStories">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="carousel">
+                    <h2>Coaching Packages</h2>
+                    <div class="carousel-container" id="coachPackages" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="cta-button" id="coachCTA" aria-label="Schedule free 30-minute intro">Schedule Free 30-min Intro</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- CONTACT MODAL -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <h2 class="modal-title">Let's Connect</h2>
+            <form id="contactForm" aria-label="Contact form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="company">Organization</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="modal-submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Global social impact leader with 25+ years transforming organizations through purpose-driven strategies.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#leader">Leader</a>
+                <a href="#speaker">Speaker</a>
+                <a href="#advisor">Advisor</a>
+                <a href="#coach">Coach</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="https://linkedin.com/in/balajiganapathy" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="mailto:contact@balajiganapathy.com">Email</a>
+                <a href="#" onclick="document.getElementById('contactModal').classList.add('active')">Contact Form</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Balaji Ganapathy. All rights reserved. | <a href="#" style="color: var(--color-teal); text-decoration: none;">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // ============ STATE MANAGEMENT ============
+        const state = {
+            currentPersona: 'leader',
+            personas: ['leader', 'speaker', 'advisor', 'coach'],
+            personaData: {},
+            isDarkMode: localStorage.getItem('darkMode') === 'true',
+            currentAccents: {
+                leader: '#00D8BE',
+                speaker: '#FFB400',
+                advisor: '#00D8BE',
+                coach: '#FFD700'
+            }
+        };
+
+        // ============ INITIALIZATION ============
+        async function initialize() {
+            // Load persona data from JSON
+            for (const persona of state.personas) {
+                try {
+                    const response = await fetch(`_data/${persona}.json`);
+                    if (response.ok) {
+                        state.personaData[persona] = await response.json();
+                    }
+                } catch (error) {
+                    console.warn(`Could not load ${persona}.json:`, error);
+                }
+            }
+
+            // Apply dark mode
+            if (state.isDarkMode) {
+                document.body.classList.add('dark-mode');
+                document.getElementById('themeToggle').textContent = '☀️';
+            }
+
+            // Populate UI
+            populatePersonaContent('leader');
+            setupEventListeners();
+        }
+
+        // ============ POPULATE CONTENT ============
+        function populatePersonaContent(persona) {
+            const data = state.personaData[persona] || {};
+            const accent = data.colorAccent || state.currentAccents[persona];
+
+            // Set CSS variable for current accent
+            document.documentElement.style.setProperty('--current-accent', accent);
+
+            // Populate hero
+            const taglineEl = document.getElementById(`${persona}Tagline`);
+            if (taglineEl && data.tagline) {
+                taglineEl.textContent = data.tagline;
+            }
+
+            // Persona-specific content
+            switch(persona) {
+                case 'leader':
+                    populateLeader(data);
+                    break;
+                case 'speaker':
+                    populateSpeaker(data);
+                    break;
+                case 'advisor':
+                    populateAdvisor(data);
+                    break;
+                case 'coach':
+                    populateCoach(data);
+                    break;
+            }
+
+            // Update nav highlight
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.persona === persona);
+            });
+
+            state.currentPersona = persona;
+        }
+
+        function populateLeader(data) {
+            // Programs carousel
+            const programsContainer = document.getElementById('leaderPrograms');
+            if (data.programs) {
+                programsContainer.innerHTML = data.programs.map(prog => `
+                    <div class="carousel-item" style="background: white;">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">${prog.icon || '⭐'}</div>
+                        <h3>${prog.title}</h3>
+                        <p>${prog.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Speaking topics
+            const topicsContainer = document.getElementById('leaderTopics');
+            if (data.speakingTopics) {
+                topicsContainer.innerHTML = data.speakingTopics.map((topic, idx) => `
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>${topic.title}</span>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">${topic.description}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function populateSpeaker(data) {
+            // Topics accordion
+            const topicsContainer = document.getElementById('speakerTopics');
+            if (data.topics) {
+                topicsContainer.innerHTML = data.topics.map((topic, idx) => `
+                    <div class="accordion-item ${idx === 0 ? 'active' : ''}">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <span>${topic.title}</span>
+                            <span class="accordion-icon">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">${topic.details || topic.description}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Engagements carousel
+            const engagementsContainer = document.getElementById('speakerEngagements');
+            if (data.engagements) {
+                engagementsContainer.innerHTML = data.engagements.map(eng => `
+                    <div class="carousel-item">
+                        <h3>${eng.title}</h3>
+                        <p style="margin: var(--spacing-md) 0;"><strong>📅 ${eng.date}</strong></p>
+                        <p><strong>📍 ${eng.location}</strong></p>
+                        <p style="margin-top: var(--spacing-md); opacity: 0.8;">${eng.type}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function populateAdvisor(data) {
+            // Expertise carousel
+            const expertiseContainer = document.getElementById('advisorExpertise');
+            if (data.expertise) {
+                expertiseContainer.innerHTML = data.expertise.map(exp => `
+                    <div class="carousel-item">
+                        <h3>${exp.title}</h3>
+                        <p>${exp.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Testimonials carousel
+            const testimonialsContainer = document.getElementById('advisorTestimonials');
+            if (data.testimonials) {
+                testimonialsContainer.innerHTML = data.testimonials.map(test => `
+                    <div class="carousel-item">
+                        <p style="font-style: italic; margin-bottom: var(--spacing-md);">"${test.quote}"</p>
+                        <p><strong>${test.author}</strong></p>
+                        <p style="opacity: 0.7; font-size: 0.9rem;">${test.role}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Case studies carousel
+            const caseStudiesContainer = document.getElementById('advisorCaseStudies');
+            if (data.caseStudies) {
+                caseStudiesContainer.innerHTML = data.caseStudies.map(cs => `
+                    <div class="carousel-item">
+                        <div style="height: 150px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2rem;">📊</span>
+                        </div>
+                        <h3>${cs.title}</h3>
+                        <p>${cs.description}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function populateCoach(data) {
+            // Focus areas carousel
+            const focusContainer = document.getElementById('coachFocusAreas');
+            if (data.focusAreas) {
+                focusContainer.innerHTML = data.focusAreas.map(focus => `
+                    <div class="carousel-item">
+                        <h3>${focus.title}</h3>
+                        <p>${focus.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Transformation stories carousel
+            const storiesContainer = document.getElementById('coachStories');
+            if (data.transformationStories) {
+                storiesContainer.innerHTML = data.transformationStories.map(story => `
+                    <div class="carousel-item">
+                        <div style="height: 150px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">
+                            <span style="font-size: 2rem;">🌟</span>
+                        </div>
+                        <h3>${story.title}</h3>
+                        <p>${story.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // Coaching packages carousel
+            const packagesContainer = document.getElementById('coachPackages');
+            if (data.packages) {
+                packagesContainer.innerHTML = data.packages.map(pkg => `
+                    <div class="carousel-item" style="border: 2px solid var(--current-accent, #FFD700); display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <h3>${pkg.name}</h3>
+                            <p style="margin: var(--spacing-md) 0;"><strong>Duration:</strong> ${pkg.duration}</p>
+                            <p><strong>Sessions:</strong> ${pkg.sessions}</p>
+                        </div>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--current-accent, #FFD700); margin-top: var(--spacing-md);">${pkg.price}</p>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // ============ EVENT LISTENERS ============
+        function setupEventListeners() {
+            // Theme toggle
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+
+            // Navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const persona = link.dataset.persona;
+                    navigateToPersona(persona);
+                });
+            });
+
+            // Arrow navigation
+            document.getElementById('prevPersona').addEventListener('click', () => {
+                const idx = state.personas.indexOf(state.currentPersona);
+                const newIdx = (idx - 1 + state.personas.length) % state.personas.length;
+                navigateToPersona(state.personas[newIdx]);
+            });
+
+            document.getElementById('nextPersona').addEventListener('click', () => {
+                const idx = state.personas.indexOf(state.currentPersona);
+                const newIdx = (idx + 1) % state.personas.length;
+                navigateToPersona(state.personas[newIdx]);
+            });
+
+            // Hamburger menu
+            const hamburger = document.getElementById('hamburger');
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                const nav = document.getElementById('nav');
+                nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+            });
+
+            // CTA buttons
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    document.getElementById('contactModal').classList.add('active');
+                });
+            });
+
+            // Modal
+            const modal = document.getElementById('contactModal');
+            document.querySelector('.modal-close').addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for reaching out! We will get back to you soon.');
+                modal.classList.remove('active');
+                e.target.reset();
+            });
+
+            // Touch swipe navigation
+            let touchStart = 0;
+            let touchEnd = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                touchStart = e.changedTouches[0].screenX;
+            });
+
+            document.addEventListener('touchend', (e) => {
+                touchEnd = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (touchStart - touchEnd > 50) {
+                    // Swiped left
+                    const idx = state.personas.indexOf(state.currentPersona);
+                    navigateToPersona(state.personas[(idx + 1) % state.personas.length]);
+                } else if (touchEnd - touchStart > 50) {
+                    // Swiped right
+                    const idx = state.personas.indexOf(state.currentPersona);
+                    navigateToPersona(state.personas[(idx - 1 + state.personas.length) % state.personas.length]);
+                }
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    document.getElementById('nextPersona').click();
+                } else if (e.key === 'ArrowLeft') {
+                    document.getElementById('prevPersona').click();
+                }
+            });
+        }
+
+        function toggleTheme() {
+            state.isDarkMode = !state.isDarkMode;
+            document.body.classList.toggle('dark-mode');
+            document.getElementById('themeToggle').textContent = state.isDarkMode ? '☀️' : '🌙';
+            localStorage.setItem('darkMode', state.isDarkMode);
+        }
+
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const isActive = item.classList.contains('active');
+
+            // Close all other accordion items in the same container
+            item.parentElement.querySelectorAll('.accordion-item').forEach(acc => {
+                acc.classList.remove('active');
+            });
+
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        function navigateToPersona(persona) {
+            const idx = state.personas.indexOf(persona);
+            const container = document.getElementById('personasContainer');
+            container.style.transform = `translateX(-${idx * 100}%)`;
+            populatePersonaContent(persona);
+        }
+
+        // ============ PARALLAX EFFECT ============
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxOffset = scrolled * 0.5;
+            document.documentElement.style.setProperty('--parallax-offset', `-${parallaxOffset}px`);
+
+            // Animate metric counters on scroll
+            animateMetricsOnScroll();
+        });
+
+        function animateMetricsOnScroll() {
+            const metrics = document.querySelectorAll('.metric-value[data-target]');
+            metrics.forEach(metric => {
+                const target = parseInt(metric.dataset.target);
+                const current = parseInt(metric.textContent.replace(/[^0-9]/g, ''));
+
+                if (current < target && window.scrollY > 100) {
+                    const increment = Math.ceil((target - current) / 50);
+                    metric.textContent = current + increment;
+                }
+            });
+        }
+
+        // ============ START ============
+        initialize();
+    </script>
+</body>
+</html>
