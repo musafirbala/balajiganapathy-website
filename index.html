@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Balaji Ganapathy - 25+ years global social impact leader | CSR, ESG, Philanthropy, Executive Coach">
-    <meta name="keywords" content="social impact, CSR, ESG, leadership, executive coach, sustainability, corporate social responsibility">
+    <meta name="description" content="Balaji Ganapathy - 25+ years global social impact leader | CSR, ESG, Philanthropy, Executive Coach | Strategic Leadership for Purpose-Driven Organizations">
+    <meta name="keywords" content="social impact, CSR, ESG, leadership, executive coach, sustainability, corporate social responsibility, impact leadership, global change">
     <meta name="author" content="Balaji Ganapathy">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Balaji Ganapathy - Global Social Impact Executive">
     <meta property="og:type" content="profile">
     <meta property="og:image" content="/media/og-image.jpg">
     <meta property="og:url" content="https://balajiganapathy.com">
+    <meta property="og:description" content="25+ years transforming organizations through purpose-driven strategies, CSR leadership, and sustainable impact">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Balaji Ganapathy - Global Social Impact Executive">
-    <title>Balaji Ganapathy | Global Social Impact Executive | CSR Leadership</title>
+    <meta name="twitter:title" content="Balaji Ganapathy | Global Social Impact Executive">
+    <meta name="twitter:description" content="Strategic leader in CSR, ESG, philanthropy, and organizational transformation">
+    <meta name="theme-color" content="#00D8BE">
+    <link rel="canonical" href="https://balajiganapathy.com">
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <style>
+        /* ============ RESET & VARIABLES ============ */
         * {
             margin: 0;
             padding: 0;
@@ -43,6 +47,7 @@
             --spacing-lg: 2rem;
             --spacing-xl: 3rem;
             --transition-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --current-accent: #00D8BE;
         }
 
         html {
@@ -91,6 +96,12 @@
 
         .skip-link:focus {
             top: 0;
+        }
+
+        /* ====== FOCUS STYLES ====== */
+        *:focus-visible {
+            outline: 2px solid var(--current-accent);
+            outline-offset: 2px;
         }
 
         /* ====== HEADER & NAVIGATION ====== */
@@ -168,7 +179,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: var(--current-accent, var(--color-teal));
+            background: var(--current-accent);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -179,16 +190,10 @@
         }
 
         .nav-link.active {
-            color: var(--current-accent, var(--color-teal));
+            color: var(--current-accent);
             font-weight: 600;
         }
 
-        .nav-link:focus {
-            outline: 2px solid var(--current-accent, var(--color-teal));
-            outline-offset: 2px;
-        }
-
-        /* ====== THEME TOGGLE ====== */
         .theme-controls {
             display: flex;
             gap: var(--spacing-md);
@@ -211,13 +216,6 @@
             transform: rotate(20deg);
         }
 
-        .theme-toggle:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: 2px;
-            border-radius: 50%;
-        }
-
-        /* ====== HAMBURGER MENU ====== */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -248,12 +246,6 @@
 
         .hamburger.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .hamburger:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: 2px;
-            border-radius: 4px;
         }
 
         /* ====== MAIN CONTENT ====== */
@@ -389,7 +381,7 @@
         .metric-value {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--current-accent, var(--color-teal));
+            color: var(--current-accent);
             margin-bottom: var(--spacing-sm);
             font-variant-numeric: tabular-nums;
             transition: all 0.3s ease;
@@ -466,11 +458,6 @@
             box-shadow: 0 15px 40px rgba(0, 216, 190, 0.1);
         }
 
-        .carousel-item:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: 2px;
-        }
-
         .carousel-item h3 {
             font-size: 1.25rem;
             margin-bottom: var(--spacing-sm);
@@ -542,16 +529,11 @@
 
         .accordion-header:hover {
             background: rgba(0, 216, 190, 0.05);
-            color: var(--current-accent, var(--color-teal));
+            color: var(--current-accent);
         }
 
         body.dark-mode .accordion-header:hover {
             background: rgba(0, 216, 190, 0.1);
-        }
-
-        .accordion-header:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: -2px;
         }
 
         .accordion-icon {
@@ -610,7 +592,7 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            background: var(--current-accent, var(--color-teal));
+            background: var(--current-accent);
             color: white;
             transition: all 0.3s ease;
             text-transform: uppercase;
@@ -636,11 +618,6 @@
 
         .cta-button:active {
             transform: translateY(0);
-        }
-
-        .cta-button:focus {
-            outline: 2px solid rgba(0, 216, 190, 0.5);
-            outline-offset: 2px;
         }
 
         /* ====== MODAL ====== */
@@ -719,11 +696,6 @@
             color: var(--color-text-light);
         }
 
-        .modal-close:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: 2px;
-        }
-
         .modal-title {
             font-size: 1.75rem;
             font-weight: 700;
@@ -776,7 +748,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--current-accent, var(--color-teal));
+            border-color: var(--current-accent);
             box-shadow: 0 0 0 3px rgba(0, 216, 190, 0.1);
         }
 
@@ -788,7 +760,7 @@
         .modal-submit {
             width: 100%;
             padding: var(--spacing-md);
-            background: var(--current-accent, var(--color-teal));
+            background: var(--current-accent);
             color: white;
             border: none;
             border-radius: 8px;
@@ -802,11 +774,6 @@
         .modal-submit:hover {
             filter: brightness(1.1);
             transform: translateY(-2px);
-        }
-
-        .modal-submit:focus {
-            outline: 2px solid rgba(0, 216, 190, 0.5);
-            outline-offset: 2px;
         }
 
         /* ====== FOOTER ====== */
@@ -849,11 +816,6 @@
             color: var(--color-teal);
         }
 
-        .footer-section a:focus {
-            outline: 2px solid var(--color-teal);
-            outline-offset: 2px;
-        }
-
         .footer-bottom {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: var(--spacing-lg);
@@ -879,7 +841,7 @@
         .nav-arrow {
             width: 50px;
             height: 50px;
-            background: var(--current-accent, var(--color-teal));
+            background: var(--current-accent);
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -900,9 +862,37 @@
             box-shadow: 0 8px 20px rgba(0, 216, 190, 0.3);
         }
 
-        .nav-arrow:focus {
-            outline: 2px solid rgba(0, 216, 190, 0.5);
-            outline-offset: 2px;
+        /* ====== ADDITIONAL UTILITY STYLES ====== */
+        .success-message {
+            display: none;
+            padding: var(--spacing-md);
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 6px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .error-message {
+            display: none;
+            padding: var(--spacing-md);
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            border-radius: 6px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        body.dark-mode .success-message {
+            background: rgba(0, 216, 190, 0.1);
+            color: #00D8BE;
+            border-color: rgba(0, 216, 190, 0.3);
+        }
+
+        body.dark-mode .error-message {
+            background: rgba(255, 107, 107, 0.1);
+            color: #FF6B6B;
+            border-color: rgba(255, 107, 107, 0.3);
         }
 
         /* ====== RESPONSIVE DESIGN ====== */
@@ -1026,6 +1016,56 @@
             .carousel-item,
             .accordion-item {
                 page-break-inside: avoid;
+            }
+        }
+
+        /* ====== ANIMATIONS ====== */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ====== LOADING STATES ====== */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: -200% 0;
             }
         }
     </style>
@@ -1236,24 +1276,21 @@
             <form id="contactForm" aria-label="Contact form" novalidate>
                 <div class="form-group">
                     <label for="name">Name <span aria-label="required">*</span></label>
-                    <input type="text" id="name" name="name" required aria-required="true" aria-describedby="nameError">
-                    <span id="nameError" style="display:none; color: #FF6B6B; font-size: 0.85rem;"></span>
+                    <input type="text" id="name" name="name" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <label for="email">Email <span aria-label="required">*</span></label>
-                    <input type="email" id="email" name="email" required aria-required="true" aria-describedby="emailError">
-                    <span id="emailError" style="display:none; color: #FF6B6B; font-size: 0.85rem;"></span>
+                    <input type="email" id="email" name="email" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <label for="company">Organization</label>
-                    <input type="text" id="company" name="company" aria-label="Company or organization name">
+                    <input type="text" id="company" name="company">
                 </div>
                 <div class="form-group">
                     <label for="message">Message <span aria-label="required">*</span></label>
-                    <textarea id="message" name="message" required aria-required="true" aria-describedby="messageError"></textarea>
-                    <span id="messageError" style="display:none; color: #FF6B6B; font-size: 0.85rem;"></span>
+                    <textarea id="message" name="message" required aria-required="true"></textarea>
                 </div>
-                <button type="submit" class="modal-submit" aria-label="Send your message">Send Message</button>
+                <button type="submit" class="modal-submit">Send Message</button>
             </form>
         </div>
     </div>
@@ -1261,8 +1298,8 @@
     <footer role="contentinfo">
         <div class="footer-container">
             <div class="footer-section">
-                <h3>About</h3>
-                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Global social impact leader with 25+ years transforming organizations through purpose-driven strategies and sustainable practices.</p>
+                <h3>About Balaji</h3>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">Global social impact leader with 25+ years transforming organizations through purpose-driven strategies, sustainable practices, and inclusive growth models.</p>
             </div>
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -1298,7 +1335,9 @@
             },
             isInitialized: false,
             touchStartX: 0,
-            touchEndX: 0
+            touchEndX: 0,
+            isLoading: false,
+            errors: []
         };
 
         // ============ INITIALIZATION FUNCTION ============
@@ -1306,6 +1345,7 @@
             if (state.isInitialized) return;
             
             console.log('🚀 Initializing portfolio...');
+            state.isLoading = true;
             
             // Load persona data from JSON files
             for (const persona of state.personas) {
@@ -1317,10 +1357,12 @@
                     } else {
                         console.warn(`⚠️ ${persona}.json not found (HTTP ${response.status})`);
                         state.personaData[persona] = {};
+                        state.errors.push(`${persona}.json failed to load (HTTP ${response.status})`);
                     }
                 } catch (error) {
                     console.warn(`❌ Error loading ${persona}.json:`, error.message);
                     state.personaData[persona] = {};
+                    state.errors.push(`Error loading ${persona}.json: ${error.message}`);
                 }
             }
 
@@ -1336,12 +1378,16 @@
             setupAccessibility();
             
             state.isInitialized = true;
+            state.isLoading = false;
             console.log('✅ Portfolio initialized successfully!');
+            
+            if (state.errors.length > 0) {
+                console.warn('⚠️ Initialization completed with warnings:', state.errors);
+            }
         }
 
         // ============ ACCESSIBILITY SETUP ============
         function setupAccessibility() {
-            // Keyboard navigation for nav links
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach((link, idx) => {
                 link.addEventListener('keydown', (e) => {
@@ -1354,16 +1400,6 @@
                     }
                 });
             });
-
-            // Announce persona changes
-            const observer = new MutationObserver(() => {
-                const activeLink = document.querySelector('.nav-link.active');
-                if (activeLink) {
-                    console.log(`📢 Current persona: ${activeLink.textContent}`);
-                }
-            });
-
-            observer.observe(document.querySelector('nav'), { attributes: true, subtree: true });
         }
 
         // ============ POPULATE PERSONA CONTENT ============
@@ -1371,16 +1407,13 @@
             const data = state.personaData[persona] || {};
             const accent = data.colorAccent || state.currentAccents[persona];
             
-            // Update CSS accent color
             document.documentElement.style.setProperty('--current-accent', accent);
 
-            // Update hero tagline
             const taglineEl = document.getElementById(`${persona}Tagline`);
             if (taglineEl && data.tagline) {
                 taglineEl.textContent = data.tagline;
             }
 
-            // Populate persona-specific content
             switch(persona) {
                 case 'leader':
                     populateLeader(data);
@@ -1396,7 +1429,6 @@
                     break;
             }
 
-            // Update navigation active states
             document.querySelectorAll('.nav-link').forEach(link => {
                 const isActive = link.dataset.persona === persona;
                 link.classList.toggle('active', isActive);
@@ -1408,26 +1440,24 @@
 
         // ============ POPULATE LEADER CONTENT ============
         function populateLeader(data) {
-            // Featured Programs
             const programsContainer = document.getElementById('leaderPrograms');
             if (data.programs && programsContainer) {
-                programsContainer.innerHTML = data.programs.map((prog, idx) => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
-                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md);" aria-hidden="true">${prog.icon || '⭐'}</div>
+                programsContainer.innerHTML = data.programs.map(prog => `
+                    <div class="carousel-item" role="listitem">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-md);">${prog.icon || '⭐'}</div>
                         <h3>${prog.title}</h3>
                         <p>${prog.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Speaking Topics Accordion
             const topicsContainer = document.getElementById('leaderTopics');
             if (data.speakingTopics && topicsContainer) {
-                topicsContainer.innerHTML = data.speakingTopics.map((topic, idx) => `
-                    <div class="accordion-item" role="tabpanel">
-                        <button class="accordion-header" onclick="toggleAccordion(this)" role="tab" aria-expanded="false">
+                topicsContainer.innerHTML = data.speakingTopics.map(topic => `
+                    <div class="accordion-item">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>${topic.title}</span>
-                            <span class="accordion-icon" aria-hidden="true">▼</span>
+                            <span class="accordion-icon">▼</span>
                         </button>
                         <div class="accordion-content">
                             <div class="accordion-body">${topic.description}</div>
@@ -1439,37 +1469,29 @@
 
         // ============ POPULATE SPEAKER CONTENT ============
         function populateSpeaker(data) {
-            // Topics Accordion
             const topicsContainer = document.getElementById('speakerTopics');
             if (data.topics && topicsContainer) {
                 topicsContainer.innerHTML = data.topics.map((topic, idx) => `
-                    <div class="accordion-item" role="tabpanel" ${idx === 0 ? 'data-default-open="true"' : ''}>
-                        <button class="accordion-header" onclick="toggleAccordion(this)" role="tab" aria-expanded="${idx === 0}">
+                    <div class="accordion-item ${idx === 0 ? 'active' : ''}">
+                        <button class="accordion-header" onclick="toggleAccordion(this)">
                             <span>${topic.title}</span>
-                            <span class="accordion-icon" aria-hidden="true">▼</span>
+                            <span class="accordion-icon">▼</span>
                         </button>
-                        <div class="accordion-content ${idx === 0 ? 'active' : ''}">
+                        <div class="accordion-content">
                             <div class="accordion-body">${topic.details || topic.description}</div>
                         </div>
                     </div>
                 `).join('');
-                
-                // Open first accordion by default
-                if (data.topics.length > 0) {
-                    const firstItem = topicsContainer.querySelector('.accordion-item');
-                    if (firstItem) firstItem.classList.add('active');
-                }
             }
 
-            // Featured Engagements
             const engagementsContainer = document.getElementById('speakerEngagements');
             if (data.engagements && engagementsContainer) {
                 engagementsContainer.innerHTML = data.engagements.map(eng => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
+                    <div class="carousel-item" role="listitem">
                         <h3>${eng.title}</h3>
                         <p style="margin: var(--spacing-md) 0;"><strong>📅 ${eng.date}</strong></p>
                         <p><strong>📍 ${eng.location}</strong></p>
-                        <p style="margin-top: var(--spacing-md); opacity: 0.8;">${eng.type || 'Conference'}</p>
+                        <p style="margin-top: var(--spacing-md);">${eng.type || 'Conference'}</p>
                     </div>
                 `).join('');
             }
@@ -1477,37 +1499,32 @@
 
         // ============ POPULATE ADVISOR CONTENT ============
         function populateAdvisor(data) {
-            // Expertise Areas
             const expertiseContainer = document.getElementById('advisorExpertise');
             if (data.expertise && expertiseContainer) {
                 expertiseContainer.innerHTML = data.expertise.map(exp => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
+                    <div class="carousel-item" role="listitem">
                         <h3>${exp.title}</h3>
                         <p>${exp.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Testimonials
             const testimonialsContainer = document.getElementById('advisorTestimonials');
             if (data.testimonials && testimonialsContainer) {
                 testimonialsContainer.innerHTML = data.testimonials.map(test => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
-                        <p style="font-style: italic; margin-bottom: var(--spacing-md);">"${test.quote}"</p>
-                        <p><strong>${test.author}</strong></p>
-                        <p style="opacity: 0.7; font-size: 0.9rem;">${test.role}</p>
+                    <div class="carousel-item" role="listitem">
+                        <p style="font-style: italic;">"${test.quote}"</p>
+                        <p style="margin-top: var(--spacing-md);"><strong>${test.author}</strong></p>
+                        <p style="opacity: 0.7;">${test.role}</p>
                     </div>
                 `).join('');
             }
 
-            // Case Studies
             const caseStudiesContainer = document.getElementById('advisorCaseStudies');
             if (data.caseStudies && caseStudiesContainer) {
                 caseStudiesContainer.innerHTML = data.caseStudies.map(cs => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
-                        <div style="height: 150px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;" aria-hidden="true">
-                            <span style="font-size: 2rem;">📊</span>
-                        </div>
+                    <div class="carousel-item" role="listitem">
+                        <div style="height: 150px; background: linear-gradient(135deg, rgba(0, 216, 190, 0.1), rgba(255, 180, 0, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">📊</div>
                         <h3>${cs.title}</h3>
                         <p>${cs.description}</p>
                     </div>
@@ -1517,65 +1534,54 @@
 
         // ============ POPULATE COACH CONTENT ============
         function populateCoach(data) {
-            // Focus Areas
             const focusContainer = document.getElementById('coachFocusAreas');
             if (data.focusAreas && focusContainer) {
                 focusContainer.innerHTML = data.focusAreas.map(focus => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
+                    <div class="carousel-item" role="listitem">
                         <h3>${focus.title}</h3>
                         <p>${focus.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Transformation Stories
             const storiesContainer = document.getElementById('coachStories');
             if (data.transformationStories && storiesContainer) {
                 storiesContainer.innerHTML = data.transformationStories.map(story => `
-                    <div class="carousel-item" role="listitem" tabindex="0">
-                        <div style="height: 150px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;" aria-hidden="true">
-                            <span style="font-size: 2rem;">🌟</span>
-                        </div>
+                    <div class="carousel-item" role="listitem">
+                        <div style="height: 150px; background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 216, 190, 0.1)); border-radius: 8px; margin-bottom: var(--spacing-md); display: flex; align-items: center; justify-content: center;">🌟</div>
                         <h3>${story.title}</h3>
                         <p>${story.description}</p>
                     </div>
                 `).join('');
             }
 
-            // Coaching Packages
             const packagesContainer = document.getElementById('coachPackages');
             if (data.packages && packagesContainer) {
                 packagesContainer.innerHTML = data.packages.map(pkg => `
-                    <div class="carousel-item" role="listitem" tabindex="0" style="border: 2px solid var(--current-accent, #FFD700); display: flex; flex-direction: column; justify-content: space-between;">
-                        <div>
-                            <h3>${pkg.name}</h3>
-                            <p style="margin: var(--spacing-md) 0;"><strong>Duration:</strong> ${pkg.duration}</p>
-                            <p><strong>Sessions:</strong> ${pkg.sessions}</p>
-                        </div>
-                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--current-accent, #FFD700); margin-top: var(--spacing-md);">${pkg.price}</p>
+                    <div class="carousel-item" style="border: 2px solid var(--current-accent);">
+                        <h3>${pkg.name}</h3>
+                        <p style="margin: var(--spacing-md) 0;"><strong>Duration:</strong> ${pkg.duration}</p>
+                        <p><strong>Sessions:</strong> ${pkg.sessions}</p>
+                        <p style="font-size: 1.5rem; font-weight: 700; color: var(--current-accent); margin-top: var(--spacing-md);">${pkg.price}</p>
                     </div>
                 `).join('');
             }
         }
 
-        // ============ SETUP EVENT LISTENERS ============
+        // ============ EVENT LISTENERS ============
         function setupEventListeners() {
-            // Theme Toggle
             const themeToggle = document.getElementById('themeToggle');
             themeToggle?.addEventListener('click', toggleTheme);
 
-            // Navigation Links
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
-                    const persona = link.dataset.persona;
-                    if (persona) {
-                        navigateToPersona(persona);
+                    if (link.dataset.persona) {
+                        navigateToPersona(link.dataset.persona);
                     }
                 });
             });
 
-            // Arrow Navigation
             const prevBtn = document.getElementById('prevPersona');
             const nextBtn = document.getElementById('nextPersona');
             
@@ -1589,16 +1595,13 @@
                 navigateToPersona(state.personas[(idx + 1) % state.personas.length]);
             });
 
-            // Hamburger Menu
             const hamburger = document.getElementById('hamburger');
             hamburger?.addEventListener('click', toggleMobileMenu);
 
-            // CTA Buttons
             document.querySelectorAll('.cta-button').forEach(button => {
                 button.addEventListener('click', openContactForm);
             });
 
-            // Modal Controls
             const modal = document.getElementById('contactModal');
             const modalClose = document.querySelector('.modal-close');
             
@@ -1607,11 +1610,9 @@
                 if (e.target === modal) closeContactForm();
             });
 
-            // Form Submission
             const form = document.getElementById('contactForm');
             form?.addEventListener('submit', handleFormSubmit);
 
-            // Touch Swipe Navigation
             document.addEventListener('touchstart', (e) => {
                 state.touchStartX = e.changedTouches[0].screenX;
             }, false);
@@ -1621,7 +1622,6 @@
                 handleSwipe();
             }, false);
 
-            // Keyboard Navigation
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowRight') {
                     e.preventDefault();
@@ -1634,11 +1634,10 @@
                 }
             });
 
-            // Scroll Events
             window.addEventListener('scroll', handleScroll);
         }
 
-        // ============ THEME TOGGLE FUNCTION ============
+        // ============ THEME TOGGLE ============
         function toggleTheme() {
             state.isDarkMode = !state.isDarkMode;
             console.log('🌓 Dark mode toggled to:', state.isDarkMode);
@@ -1651,10 +1650,9 @@
             }
             
             localStorage.setItem('darkMode', state.isDarkMode ? 'true' : 'false');
-            console.log('💾 Dark mode preference saved');
         }
 
-        // ============ MOBILE MENU TOGGLE ============
+        // ============ MOBILE MENU ============
         function toggleMobileMenu() {
             const hamburger = document.getElementById('hamburger');
             const nav = document.getElementById('nav');
@@ -1666,28 +1664,24 @@
             }
         }
 
-        // ============ ACCORDION TOGGLE ============
+        // ============ ACCORDION ============
         function toggleAccordion(header) {
             const item = header.parentElement;
             const isActive = item.classList.contains('active');
             
-            // Close sibling items
             const container = item.parentElement;
             if (container) {
                 container.querySelectorAll('.accordion-item').forEach(acc => {
                     acc.classList.remove('active');
-                    acc.querySelector('[role="tab"]')?.setAttribute('aria-expanded', 'false');
                 });
             }
             
-            // Toggle current item
             if (!isActive) {
                 item.classList.add('active');
-                header.setAttribute('aria-expanded', 'true');
             }
         }
 
-        // ============ PERSONA NAVIGATION ============
+        // ============ NAVIGATION ============
         function navigateToPersona(persona) {
             const idx = state.personas.indexOf(persona);
             if (idx === -1) return;
@@ -1698,10 +1692,10 @@
             }
             
             populatePersonaContent(persona);
-            console.log(`🎯 Navigated to: ${persona} (${idx + 1}/4)`);
+            console.log(`🎯 Navigated to: ${persona}`);
         }
 
-        // ============ CONTACT FORM MANAGEMENT ============
+        // ============ CONTACT FORM ============
         function openContactForm() {
             const modal = document.getElementById('contactModal');
             if (modal) {
@@ -1724,7 +1718,6 @@
         function handleFormSubmit(e) {
             e.preventDefault();
             
-            // Basic validation
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
@@ -1749,7 +1742,7 @@
             return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
         }
 
-        // ============ SWIPE HANDLING ============
+        // ============ SWIPE ============
         function handleSwipe() {
             const threshold = 50;
             const diff = state.touchStartX - state.touchEndX;
@@ -1758,22 +1751,17 @@
             
             const idx = state.personas.indexOf(state.currentPersona);
             if (diff > 0) {
-                // Swiped left
                 navigateToPersona(state.personas[(idx + 1) % state.personas.length]);
             } else {
-                // Swiped right
                 navigateToPersona(state.personas[(idx - 1 + state.personas.length) % state.personas.length]);
             }
         }
 
-        // ============ SCROLL EFFECTS ============
+        // ============ SCROLL ============
         function handleScroll() {
-            // Parallax effect
             const scrolled = window.pageYOffset;
             const parallaxOffset = scrolled * 0.5;
             document.documentElement.style.setProperty('--parallax-offset', `-${parallaxOffset}px`);
-
-            // Animate metrics
             animateMetricsOnScroll();
         }
 
@@ -1790,26 +1778,13 @@
             });
         }
 
-        // ============ INITIALIZATION START ============
+        // ============ INITIALIZATION ============
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initialize);
         } else {
             initialize();
         }
 
-        // Helper function to open contact form from footer
-        function openContactForm() {
-            const modal = document.getElementById('contactModal');
-            if (modal) {
-                modal.classList.add('active');
-                modal.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-                document.getElementById('name')?.focus();
-                console.log('📝 Contact form opened');
-            }
-        }
-
-        // Log page interactions for analytics
         window.addEventListener('beforeunload', () => {
             console.log(`📊 Session ended on persona: ${state.currentPersona}`);
         });
