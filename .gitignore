@@ -21,3 +21,10 @@ npm-debug.log
 # Environment
 .env
 .env.local
+
+# TinaCMS generated files
+.tina
+node_modules
+.env.local
+.env
+
