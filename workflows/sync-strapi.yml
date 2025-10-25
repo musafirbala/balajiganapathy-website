@@ -1,0 +1,42 @@
+name: Sync Strapi Content to GitHub
+
+on:
+  repository_dispatch:
+    types: [strapi-content-update]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch Leader content
+        run: |
+          curl -s "https://balajiganapathy-strapi.onrender.com/api/leaders" > _data/leader.json
+
+      - name: Fetch Speaker content
+        run: |
+          curl -s "https://balajiganapathy-strapi.onrender.com/api/speakers" > _data/speaker.json
+
+      - name: Fetch Advisor content
+        run: |
+          curl -s "https://balajiganapathy-strapi.onrender.com/api/advisors" > _data/advisor.json
+
+      - name: Fetch Coach content
+        run: |
+          curl -s "https://balajiganapathy-strapi.onrender.com/api/coaches" > _data/coach.json
+
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Strapi Bot"
+          git add _data/
+          if git diff --quiet --staged; then
+            echo "No changes to commit"
+          else
+            git commit -m "sync: Update content from Strapi CMS"
+            git push
+          fi
