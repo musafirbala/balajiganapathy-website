@@ -1,5 +1,6 @@
-# SPA catch-all route
+# SPA catch-all
 /*  /index.html  200
 
-# Admin panel route
-/admin  /admin/index.html  200
+# Media files (if needed)
+/media/*  /media/:splat  200
+
