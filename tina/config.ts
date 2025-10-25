@@ -8,8 +8,8 @@ export const branch = 'main'
  */
 export default defineConfig({
   branch,
-  clientId: 'YOUR_CLIENT_ID', // Get from TinaCMS
-  token: 'YOUR_TOKEN', // Get from TinaCMS
+  clientId: '5ac77a8f-9319-49c9-9c3c-9cf593aa8c65', // Get from TinaCMS
+  token: 'a3a0a4be615d260d86bc8c980337dba06df78881', // Get from TinaCMS
   build: {
     publicDir: '.',
     outputDir: '.tina'
