@@ -9,7 +9,8 @@ export const branch = 'main'
 export default defineConfig({
   branch,
   clientId: '5ac77a8f-9319-49c9-9c3c-9cf593aa8c65', // Get from TinaCMS
-  token: 'a3a0a4be615d260d86bc8c980337dba06df78881', // Get from TinaCMS
+  token: process.env.TINA_TOKEN || '',
+
   build: {
     publicDir: '.',
     outputDir: '.tina'
