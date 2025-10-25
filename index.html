@@ -1339,6 +1339,66 @@
             isLoading: false,
             errors: []
         };
+<script>
+// Strapi API URL
+const STRAPI_URL = 'https://balajiganapathy-strapi.onrender.com/api';
+
+// Fetch and display content
+async function loadContent() {
+  try {
+    // Fetch all content from Strapi
+    const [leaderRes, speakerRes, advisorRes, coachRes] = await Promise.all([
+      fetch(`${STRAPI_URL}/leaders?populate=*`),
+      fetch(`${STRAPI_URL}/speakers?populate=*`),
+      fetch(`${STRAPI_URL}/advisors?populate=*`),
+      fetch(`${STRAPI_URL}/coaches?populate=*`)
+    ]);
+    
+    const leader = await leaderRes.json();
+    const speaker = await speakerRes.json();
+    const advisor = await advisorRes.json();
+    const coach = await coachRes.json();
+    
+    // Extract data (Strapi returns data in a specific structure)
+    const leaderData = leader.data[0]?.attributes;
+    const speakerData = speaker.data[0]?.attributes;
+    const advisorData = advisor.data[0]?.attributes;
+    const coachData = coach.data[0]?.attributes;
+    
+    // Update DOM with content
+    if (leaderData) {
+      document.querySelector('[data-leader-title]').textContent = leaderData.title;
+      document.querySelector('[data-leader-tagline]').textContent = leaderData.tagline;
+      document.querySelector('[data-leader-years]').textContent = leaderData.years;
+      document.querySelector('[data-leader-impact]').textContent = leaderData.impact;
+      document.querySelector('[data-leader-countries]').textContent = leaderData.countries;
+      document.querySelector('[data-leader-investment]').textContent = leaderData.investment;
+    }
+    
+    if (speakerData) {
+      document.querySelector('[data-speaker-title]').textContent = speakerData.title;
+      document.querySelector('[data-speaker-subtitle]').textContent = speakerData.subtitle;
+      document.querySelector('[data-speaker-engagements]').textContent = speakerData.engagements;
+    }
+    
+    if (advisorData) {
+      document.querySelector('[data-advisor-title]').textContent = advisorData.title;
+      document.querySelector('[data-advisor-subtitle]').textContent = advisorData.subtitle;
+    }
+    
+    if (coachData) {
+      document.querySelector('[data-coach-title]').textContent = coachData.title;
+      document.querySelector('[data-coach-subtitle]').textContent = coachData.subtitle;
+    }
+    
+  } catch (error) {
+    console.error('Error loading content from Strapi:', error);
+  }
+}
+
+// Load content when page loads
+document.addEventListener('DOMContentLoaded', loadContent);
+</script>
 
         // ============ INITIALIZATION FUNCTION ============
         async function initialize() {
@@ -1437,6 +1497,26 @@
 
             state.currentPersona = persona;
         }
+<!-- Leader Section -->
+<h1 data-leader-title>25+ Years Transforming Global Impact</h1>
+<p data-leader-tagline>Empowering Purpose. Enabling Impact.</p>
+<span data-leader-years>25+</span>
+<span data-leader-impact>500M+</span>
+<span data-leader-countries>50+</span>
+<span data-leader-investment>₹500Cr+</span>
+
+<!-- Speaker Section -->
+<h2 data-speaker-title>Keynotes on Leadership</h2>
+<p data-speaker-subtitle>Global Speaker</p>
+<span data-speaker-engagements>50+</span>
+
+<!-- Advisor Section -->
+<h2 data-advisor-title>Strategic Advisory</h2>
+<p data-advisor-subtitle>Trusted Advisor</p>
+
+<!-- Coach Section -->
+<h2 data-coach-title>Transforming Leaders</h2>
+<p data-coach-subtitle>Executive Coach</p>
 
         // ============ POPULATE LEADER CONTENT ============
         function populateLeader(data) {
